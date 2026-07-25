@@ -2,18 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#153124] text-white py-16 overflow-hidden">
-      
-      {/* Background Watermark (footer.jpg topography lines) */}
-      <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
-        <Image
-          src="/images/footer.jpg"
-          alt=""
-          fill
-          className="object-cover"
-        />
-      </div>
-
+    <footer className="relative bg-[#153223] text-white py-16 overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         
         {/* Main 3-Column Content Layout */}
@@ -28,7 +17,7 @@ export default function Footer() {
               height={50}
               className="h-12 w-auto mb-6 object-contain"
             />
-            <p className="text-white/70 text-xs md:text-sm font-light leading-relaxed max-w-xs">
+            <p className="text-white text-xs md:text-sm font-light leading-relaxed max-w-xs">
               Un desarrollo residencial boutique dentro de Terralago, diseñado para
               vivir con amplitud, privacidad y conexión natural en una de las zonas con
               mayor valor de Lomas Verdes.
@@ -37,16 +26,16 @@ export default function Footer() {
 
           {/* Column 2: Contact Details */}
           <div className="flex flex-col items-start text-left">
-            <span className="text-gold text-[10px] tracking-[0.25em] uppercase font-semibold font-serif block mb-6">
+            <span className="text-[#bab082] text-xs sm:text-sm tracking-[0.2em] font-serif font-normal block mb-6">
               Contacto
             </span>
             
-            <div className="flex flex-col gap-5 text-white/70 text-xs md:text-[13px] font-light">
+            <div className="flex flex-col gap-5 text-white text-xs md:text-sm font-light">
               
               {/* Address */}
               <div className="flex gap-4 items-start">
                 <svg
-                  className="w-4 h-4 text-gold shrink-0 mt-0.5"
+                  className="w-4 h-4 text-[#bab082] shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.5"
@@ -63,16 +52,15 @@ export default function Footer() {
                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
                   />
                 </svg>
-                <span>
-                  Avenida Lomas Verdes & P.º de Lomas Verdes, 53125 Naucalpan de Juárez,
-                  Estado de México.
+                <span className="leading-relaxed">
+                  Avenida Lomas Verdes, P.º de Lomas Verdes, 53125 Naucalpan de Juárez, Estado de México.
                 </span>
               </div>
 
               {/* Phone */}
               <div className="flex gap-4 items-center">
                 <svg
-                  className="w-4 h-4 text-gold shrink-0"
+                  className="w-4 h-4 text-[#bab082] shrink-0"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.5"
@@ -84,7 +72,7 @@ export default function Footer() {
                     d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.802-5.14-4.117-6.942-6.942l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
                   />
                 </svg>
-                <a href="tel:5610706351" className="hover:text-gold transition-colors">
+                <a href="tel:5610706351" className="hover:text-[#bab082] transition-colors">
                   56 1070 6351
                 </a>
               </div>
@@ -92,7 +80,7 @@ export default function Footer() {
               {/* Email */}
               <div className="flex gap-4 items-center">
                 <svg
-                  className="w-4 h-4 text-gold shrink-0"
+                  className="w-4 h-4 text-[#bab082] shrink-0"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.5"
@@ -106,7 +94,7 @@ export default function Footer() {
                 </svg>
                 <a
                   href="mailto:ventas@siermend.com"
-                  className="hover:text-gold transition-colors"
+                  className="hover:text-[#bab082] transition-colors"
                 >
                   ventas@siermend.com
                 </a>
@@ -117,10 +105,10 @@ export default function Footer() {
 
           {/* Column 3: Links Explorar */}
           <div className="flex flex-col items-start text-left">
-            <span className="text-gold text-[10px] tracking-[0.25em] uppercase font-semibold font-serif block mb-6">
+            <span className="text-[#bab082] text-xs sm:text-sm tracking-[0.2em] font-serif font-normal block mb-6">
               Explorar
             </span>
-            <ul className="grid grid-cols-1 gap-3 text-white/70 text-xs md:text-sm font-light">
+            <ul className="grid grid-cols-1 gap-3 text-white text-xs md:text-sm font-light">
               {[
                 { label: "Desarrollo", href: "#el-desarrollo" },
                 { label: "Ubicación", href: "#ubicacion" },
@@ -130,7 +118,7 @@ export default function Footer() {
                 { label: "Contacto", href: "#contacto" },
               ].map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="hover:text-gold transition-colors nav-link-underline w-fit inline-block">
+                  <a href={link.href} className="hover:text-[#bab082] transition-colors nav-link-underline w-fit inline-block">
                     {link.label}
                   </a>
                 </li>
@@ -141,10 +129,10 @@ export default function Footer() {
         </div>
 
         {/* Separator line */}
-        <div className="w-full h-px bg-white/10 mb-8" />
+        <div className="w-full h-px bg-white/15 mb-8" />
 
         {/* Bottom Bar: Rights, Privacy, Developer */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white">
           
           {/* Rights reserved */}
           <span className="order-2 md:order-1 font-light">
@@ -153,11 +141,11 @@ export default function Footer() {
 
           {/* Privacy and Legal */}
           <div className="order-1 md:order-2 flex items-center gap-4 font-light">
-            <a href="#contacto" className="hover:text-white transition-colors">
+            <a href="#contacto" className="hover:text-[#bab082] transition-colors">
               Aviso de Privacidad
             </a>
-            <span className="text-white/20">•</span>
-            <a href="#contacto" className="hover:text-white transition-colors">
+            <span className="text-white/40">•</span>
+            <a href="#contacto" className="hover:text-[#bab082] transition-colors">
               Legal
             </a>
           </div>
@@ -172,7 +160,7 @@ export default function Footer() {
               alt="Siermend"
               width={110}
               height={24}
-              className="h-6 w-auto opacity-75 hover:opacity-100 transition-opacity"
+              className="h-6 w-auto opacity-90 hover:opacity-100 transition-opacity"
             />
           </div>
 

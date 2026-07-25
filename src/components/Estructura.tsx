@@ -1,71 +1,84 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Estructura() {
+  const [activeLevel, setActiveLevel] = useState<string | null>(null);
+
   return (
-    <section id="estructura" className="relative bg-cream-dark/30 py-16 md:py-24 border-t border-b border-gold/10">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="estructura" className="relative bg-cream py-16 md:py-24 overflow-hidden">
+      <div className="max-w-[1600px] mx-auto px-6 sm:px-10">
         
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-gold text-xs tracking-[0.25em] uppercase font-semibold block mb-2">
-            Niveles
-          </span>
-          <h2 className="font-serif text-3xl md:text-5xl text-forest leading-tight">
-            Distribución por <em className="italic text-gold">plantas</em>
+        {/* Section Header with Left/Right Lines */}
+        <div className="flex items-center w-full max-w-4xl mx-auto gap-6 mb-12 sm:mb-16">
+          <div className="flex-grow h-px bg-[#153223]/25" />
+          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-[#153223] text-center whitespace-nowrap">
+            Distribución por plantas
           </h2>
-          <div className="w-12 h-px bg-gold/60 mx-auto mt-4" />
+          <div className="flex-grow h-px bg-[#153223]/25" />
         </div>
 
-        {/* Split Layout */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          
-          {/* Left Side: Legend & Statistics */}
-          <div className="w-full lg:w-4/12 text-left bg-white/60 backdrop-blur-sm border border-gold/20 p-8 rounded-sm shadow-md">
-            <span className="text-gold text-xs tracking-[0.2em] uppercase font-semibold block mb-2">
-              18 Unidades | 5 Niveles
-            </span>
-            <h3 className="font-serif text-xl text-forest mb-6">
-              Modelos disponibles
-            </h3>
+        {/* Large Centered Image Container */}
+        <div className="w-full flex justify-center items-center">
+          <div className="relative w-full max-w-6xl lg:max-w-7xl group rounded-xl overflow-hidden shadow-2xl bg-white/40 backdrop-blur-xs border border-[#5c4a2c]/10 p-2 sm:p-4 md:p-6 transition-all duration-300 hover:shadow-2xl">
+            {/* Ambient Background Glow on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#ddcc98]/20 via-transparent to-[#153223]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-            {/* Model Legend List */}
-            <div className="flex flex-col gap-5">
-              {[
-                { name: "Modelo A", qty: "8 Unidades", desc: "Departamentos tipo estándar con excelente distribución.", color: "bg-[#b1ad8a]" },
-                { name: "Modelo B", qty: "4 Unidades", desc: "Departamentos con amplias terrazas frontales.", color: "bg-[#cda662]" },
-                { name: "Modelo C", qty: "4 Unidades", desc: "Departamentos traseros con mayor privacidad.", color: "bg-[#9da4b6]" },
-                { name: "Penthouse", qty: "2 Unidades", desc: "Doble altura con roof garden privado en el último nivel.", color: "bg-[#cca79f]" }
-              ].map((model) => (
-                <div key={model.name} className="flex gap-4 items-start">
-                  <div className={`w-5 h-5 rounded-sm ${model.color} shrink-0 mt-1 shadow-sm`} />
-                  <div>
-                    <div className="flex justify-between w-full text-sm font-semibold text-forest">
-                      <span>{model.name}</span>
-                      <span className="text-gold-dark">{model.qty}</span>
-                    </div>
-                    <p className="text-forest/70 text-xs mt-1 leading-relaxed">
-                      {model.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Side: Building Cross Section Image (estructura.jpg) */}
-          <div className="w-full lg:w-8/12 flex justify-center">
-            <div className="relative w-full max-w-3xl transition-transform duration-500 hover:scale-[1.01] shadow-lg rounded-sm overflow-hidden bg-white border border-gold/15 p-4 md:p-6">
+            {/* High-Resolution Structure Diagram */}
+            <div className="relative w-full h-auto">
               <Image
                 src="/images/estructura.jpg"
-                alt="Distribución arquitectónica de niveles y modelos Lomas Altas"
-                width={1200}
-                height={750}
-                className="w-full h-auto object-contain"
+                alt="Distribución por plantas Lomas Altas"
+                width={1600}
+                height={1000}
+                className="w-full h-auto object-contain rounded-lg drop-shadow-md transition-all duration-500 group-hover:drop-shadow-2xl"
                 priority
               />
+
+              {/* Interactive Floating Hotspots / Level Badges */}
+              <div className="absolute top-[8%] right-[8%] sm:right-[12%] z-20 flex flex-col gap-2">
+                <button
+                  onMouseEnter={() => setActiveLevel("Roof Garden & Penthouses")}
+                  onMouseLeave={() => setActiveLevel(null)}
+                  className="flex items-center gap-2 bg-[#153223]/90 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full shadow-lg border border-[#d4c491]/40 hover:scale-105 transition-transform"
+                >
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                  <span className="font-sans font-medium tracking-wide">N5 - N6: Penthouse & Roof Garden</span>
+                </button>
+              </div>
+
+              <div className="absolute top-[38%] right-[8%] sm:right-[12%] z-20 flex flex-col gap-2">
+                <button
+                  onMouseEnter={() => setActiveLevel("Departamentos N1-N4")}
+                  onMouseLeave={() => setActiveLevel(null)}
+                  className="flex items-center gap-2 bg-[#153223]/90 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full shadow-lg border border-[#d4c491]/40 hover:scale-105 transition-transform"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="font-sans font-medium tracking-wide">N1 - N4: Departamentos A, B y C</span>
+                </button>
+              </div>
+
+              <div className="absolute bottom-[10%] right-[8%] sm:right-[12%] z-20 flex flex-col gap-2">
+                <button
+                  onMouseEnter={() => setActiveLevel("Estacionamientos")}
+                  onMouseLeave={() => setActiveLevel(null)}
+                  className="flex items-center gap-2 bg-[#153223]/90 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full shadow-lg border border-[#d4c491]/40 hover:scale-105 transition-transform"
+                >
+                  <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
+                  <span className="font-sans font-medium tracking-wide">N-1 a N-4: Estacionamientos</span>
+                </button>
+              </div>
+
+              {/* Popover Badge when hovering levels */}
+              {activeLevel && (
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-[#1b2620]/95 text-white px-5 py-2.5 rounded-full shadow-2xl border border-[#d4c491]/50 text-xs sm:text-sm font-serif tracking-wide animate-fade-in pointer-events-none z-30">
+                  ✨ {activeLevel}
+                </div>
+              )}
+
             </div>
           </div>
-
         </div>
 
       </div>

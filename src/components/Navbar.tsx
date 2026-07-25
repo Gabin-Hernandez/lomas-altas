@@ -25,30 +25,42 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-forest-dark/95 backdrop-blur-md shadow-lg py-3"
-          : "bg-transparent py-6"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+      {/* Subtle top shade for text legibility over sec_log.jpg */}
+      <div
+        className={`absolute inset-x-0 top-0 transition-all duration-500 pointer-events-none ${
+          scrolled ? "opacity-0" : "opacity-100"
+        } h-48 md:h-56 bg-gradient-to-b from-[#153124]/40 via-[#153124]/15 to-transparent`}
+      />
+
+      {/* Solid bar when scrolled */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-500 pointer-events-none bg-[#153124]/95 backdrop-blur-md shadow-xl border-b border-white/10 ${
+          scrolled ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
+      {/* Header Content */}
+      <div className={`relative z-10 max-w-7xl mx-auto px-6 flex flex-col items-center transition-all duration-500 ${
+        scrolled ? "py-3" : "pt-6 pb-4"
+      }`}>
         {/* Logo */}
         <a href="#" className="mb-3 transition-transform duration-300 hover:scale-105">
           <Image
-            src="/images/loma-logo.jpeg"
+            src="/images/loma-logo-clean.png"
             alt="Lomas Altas - El hogar donde todo crece"
-            width={220}
-            height={50}
-            className={`transition-all duration-500 object-contain ${
-              scrolled ? "h-9 w-auto" : "h-14 w-auto"
+            width={260}
+            height={70}
+            className={`transition-all duration-500 object-contain filter drop-shadow-md ${
+              scrolled ? "h-10 w-auto" : "h-14 md:h-16 w-auto"
             }`}
             priority
           />
         </a>
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center w-full max-w-4xl px-4 gap-6">
-          <div className="flex-1 h-px bg-gold/30" />
+          <div className="flex-1 h-px bg-gold/40" />
           <nav className="flex items-center gap-6 whitespace-nowrap">
             {navLinks.map((link, index) => (
               <span key={link.href} className="flex items-center gap-6">
@@ -59,13 +71,15 @@ export default function Navbar() {
                   {link.label}
                 </a>
                 {index < navLinks.length - 1 && (
-                  <span className="text-gold/30 text-xs font-light">|</span>
+                  <span className="text-gold/40 text-xs font-light">|</span>
                 )}
               </span>
             ))}
           </nav>
-          <div className="flex-1 h-px bg-gold/30" />
-        </div>        {/* Mobile Hamburger */}
+          <div className="flex-1 h-px bg-gold/40" />
+        </div>
+
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden absolute right-6 top-6 text-white p-2"
@@ -98,11 +112,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
+        className={`md:hidden relative z-10 transition-all duration-300 overflow-hidden ${
           mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="bg-forest-dark/95 backdrop-blur-md px-6 pb-6 flex flex-col items-center gap-4">
+        <nav className="bg-[#0b3e25]/95 backdrop-blur-md px-6 pb-6 pt-2 flex flex-col items-center gap-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -118,3 +132,5 @@ export default function Navbar() {
     </header>
   );
 }
+
+

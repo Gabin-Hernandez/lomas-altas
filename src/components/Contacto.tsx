@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Image from "next/image";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Contacto() {
   const [submitted, setSubmitted] = useState(false);
@@ -13,34 +14,37 @@ export default function Contacto() {
   };
 
   return (
-    <section id="contacto" className="bg-[#153124] py-16 md:py-24 text-white relative">
-      
-      {/* Decorative Blueprint watermark of building render (optional aesthetic touch) */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+    <section id="contacto" className="relative py-20 md:py-28 text-white overflow-hidden">
+      {/* Background Image: footer.jpg (already pre-rendered with green background) */}
+      <div className="absolute inset-0 z-0">
         <Image
-          src="/images/estructura.jpg"
-          alt=""
+          src="/images/footer.jpg"
+          alt="Contáctanos"
           fill
-          className="object-cover invert"
+          className="object-cover object-center"
+          priority
         />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         
         {/* Section Header with Left and Right Lines */}
-        <div className="flex items-center w-full max-w-4xl mx-auto gap-6 mb-16">
-          <div className="flex-1 h-px bg-white/20" />
-          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-white text-center whitespace-nowrap">
-            Contáctanos
-          </h2>
-          <div className="flex-1 h-px bg-white/20" />
-        </div>
+        <ScrollReveal variant="fade-up" delay={100}>
+          <div className="flex items-center w-full max-w-4xl mx-auto gap-6 mb-16">
+            <div className="flex-1 h-px bg-white/20" />
+            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-white text-center whitespace-nowrap">
+              Contáctanos
+            </h2>
+            <div className="flex-1 h-px bg-white/20" />
+          </div>
+        </ScrollReveal>
 
         {/* Split Layout */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mt-12">
           
           {/* Left Column: Why Choose Lomas Altas */}
           <div className="w-full lg:w-5/12 text-left flex flex-col justify-center">
+            <ScrollReveal variant="slide-left" delay={150}>
             <h3 className="font-serif text-3xl md:text-4xl text-white leading-tight mb-8">
               ¿Por qué elegir Lomas Altas?
             </h3>
@@ -66,10 +70,12 @@ export default function Contacto() {
                 </li>
               ))}
             </ul>
+          </ScrollReveal>
           </div>
 
           {/* Right Column: Contact Form */}
           <div className="w-full lg:w-7/12 border-l border-white/10 lg:pl-16">
+            <ScrollReveal variant="slide-right" delay={200}>
             <h3 className="text-gold text-xl font-serif font-light mb-2">
               Agenda una cita y conoce el proyecto
             </h3>
@@ -144,6 +150,7 @@ export default function Contacto() {
                 </button>
               </div>
             </form>
+          </ScrollReveal>
           </div>
 
         </div>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function ElDesarrollo() {
@@ -177,18 +178,18 @@ export default function ElDesarrollo() {
               </p>
 
               <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-                <a
-                  href="#contacto"
+                <Link
+                  href="/contacto"
                   className="border border-[#4a3e26]/30 bg-[#decd99]/60 hover:bg-[#decd99] text-[#4a3e26] font-sans text-xs sm:text-sm tracking-wide px-7 py-3.5 transition-all shadow-sm"
                 >
                   Solicitar información
-                </a>
-                <a
-                  href="#espacios"
+                </Link>
+                <Link
+                  href="/espacios"
                   className="bg-white hover:bg-white/95 text-[#4a3e26] font-sans text-xs sm:text-sm tracking-wide px-7 py-3.5 transition-all shadow-lg hover:shadow-xl"
                 >
                   Ver departamentos
-                </a>
+                </Link>
               </div>
             </ScrollReveal>
           </div>

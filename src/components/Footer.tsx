@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -10,13 +11,15 @@ export default function Footer() {
           
           {/* Column 1: Logo & Description */}
           <div className="flex flex-col items-start text-left">
-            <Image
-              src="/images/loma-logo.jpeg"
-              alt="Lomas Altas"
-              width={220}
-              height={50}
-              className="h-12 w-auto mb-6 object-contain"
-            />
+            <Link href="/">
+              <Image
+                src="/images/loma-logo.jpeg"
+                alt="Lomas Altas"
+                width={220}
+                height={50}
+                className="h-12 w-auto mb-6 object-contain cursor-pointer"
+              />
+            </Link>
             <p className="text-white text-xs md:text-sm font-light leading-relaxed max-w-xs">
               Un desarrollo residencial boutique dentro de Terralago, diseñado para
               vivir con amplitud, privacidad y conexión natural en una de las zonas con
@@ -110,17 +113,17 @@ export default function Footer() {
             </span>
             <ul className="grid grid-cols-1 gap-3 text-white text-xs md:text-sm font-light">
               {[
-                { label: "Desarrollo", href: "#el-desarrollo" },
-                { label: "Ubicación", href: "#ubicacion" },
-                { label: "Espacios", href: "#espacios" },
-                { label: "Amenidades", href: "#amenidades" },
-                { label: "Distribución", href: "#estructura" },
-                { label: "Contacto", href: "#contacto" },
+                { label: "El desarrollo", href: "/#el-desarrollo" },
+                { label: "Ubicación", href: "/#ubicacion" },
+                { label: "Espacios", href: "/espacios" },
+                { label: "Amenidades", href: "/#amenidades" },
+                { label: "Galería", href: "/galeria" },
+                { label: "Contacto", href: "/contacto" },
               ].map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="hover:text-[#bab082] transition-colors nav-link-underline w-fit inline-block">
+                  <Link href={link.href} className="hover:text-[#bab082] transition-colors nav-link-underline w-fit inline-block">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -141,13 +144,13 @@ export default function Footer() {
 
           {/* Privacy and Legal */}
           <div className="order-1 md:order-2 flex items-center gap-4 font-light">
-            <a href="#contacto" className="hover:text-[#bab082] transition-colors">
+            <Link href="/contacto" className="hover:text-[#bab082] transition-colors">
               Aviso de Privacidad
-            </a>
+            </Link>
             <span className="text-white/40">•</span>
-            <a href="#contacto" className="hover:text-[#bab082] transition-colors">
+            <Link href="/contacto" className="hover:text-[#bab082] transition-colors">
               Legal
-            </a>
+            </Link>
           </div>
 
           {/* Developer logo */}

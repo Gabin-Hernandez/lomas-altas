@@ -1,15 +1,60 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { Map, MapControls, MapMarker, MarkerContent } from "@/components/ui/map";
-import { Card } from "@/components/ui/card";
+import { Map, MapMarker, MarkerContent, useMap } from "@/components/ui/map";
+
+/** Base zoom and how much it grows as the map crosses the viewport. */
+const MAP_ZOOM_BASE = 14.8;
+const MAP_ZOOM_RANGE = 0.7;
+
+/**
+ * Drives a subtle zoom from the page scroll position instead of the wheel,
+ * so scrolling over the map never traps the page.
+ */
+function ScrollDrivenZoom() {
+  const { map, isLoaded } = useMap();
+
+  useEffect(() => {
+    if (!map || !isLoaded) return;
+
+    const container = map.getContainer();
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const rect = container.getBoundingClientRect();
+      // 0 while the map is still below the fold, 1 once it has fully passed above it.
+      const raw = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      const progress = Math.min(1, Math.max(0, raw));
+      map.setZoom(MAP_ZOOM_BASE + progress * MAP_ZOOM_RANGE);
+    };
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [map, isLoaded]);
+
+  return null;
+}
 
 export default function Ubicacion() {
   return (
     <section id="ubicacion" className="relative bg-cream pt-16 pb-0 overflow-hidden">
       {/* Watermark Isotipo Background behind title */}
-      <div className="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 z-0 pointer-events-none opacity-[0.08] w-80 h-80 md:w-[420px] md:h-[420px]">
+      <div className="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 z-0 pointer-events-none opacity-[0.65] w-80 h-80 md:w-[420px] md:h-[420px]">
         <Image
           src="/images/isotip3.svg"
           alt=""
@@ -23,7 +68,7 @@ export default function Ubicacion() {
 
         {/* Section Header with Left and Right Lines */}
         <ScrollReveal variant="fade-up" delay={100}>
-          <div className="flex items-center w-full max-w-5xl mx-auto gap-6 mb-12 relative z-10">
+          <div className="flex items-center w-full max-w-5xl mx-auto gap-6 mb-4 relative z-10">
             <div className="flex-grow h-px bg-forest/20" />
             <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-forest text-center whitespace-nowrap">
               Sección de ubicación
@@ -32,15 +77,19 @@ export default function Ubicacion() {
           </div>
         </ScrollReveal>
 
-        {/* Topography Style Map Container - LARGER & INTERACTIVE */}
-        <Card className="relative w-full max-w-6xl mx-auto h-[550px] md:h-[650px] rounded-sm overflow-hidden shadow-2xl border border-gold/25 p-0 bg-[#faf5f0]">
+      </div>
+
+      {/* Full-bleed map that dissolves into the cream background - no frame, no shadow */}
+      <div className="relative z-10 w-full">
+        <div className="relative w-full h-[620px] md:h-[860px]">
           <Map
             center={[-99.267787, 19.517566]} // Coordinates for Avenida Lomas Verdes, Naucalpan (Exact client position)
-            zoom={15}
+            zoom={MAP_ZOOM_BASE}
             theme="light"
+            scrollZoom={false}
             className="w-full h-full"
           >
-            <MapControls />
+            <ScrollDrivenZoom />
             <MapMarker longitude={-99.267787} latitude={19.517566}>
               <MarkerContent>
                 <div className="relative z-10 flex flex-col items-center">
@@ -60,32 +109,41 @@ export default function Ubicacion() {
                 </div>
               </MarkerContent>
             </MapMarker>
-          </Map>
 
-          {/* Direction Overlay Card - Matches mockup layout */}
-          <div className="absolute bottom-10 left-6 right-6 md:left-1/2 md:-translate-x-1/2 md:w-[680px] z-30">
-            <div className="bg-[#153124]/95 backdrop-blur-md border border-gold/20 px-8 py-5 rounded-sm shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-              <div className="flex items-center gap-4">
-                <span className="text-gold text-xs tracking-[0.2em] uppercase font-semibold border-r border-white/20 pr-4 shrink-0">
-                  Dirección:
-                </span>
-                <p className="text-white text-xs md:text-[13px] font-light leading-relaxed">
-                  Avenida Lomas Verdes & P.º de Lomas Verdes,
-                  <br />
-                  53125 Naucalpan de Juárez, Méx.
-                </p>
-              </div>
-              <a
-                href="https://maps.google.com/?q=19.517566,-99.267787"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gold hover:text-white text-[10px] tracking-[0.25em] uppercase font-semibold border-b border-gold hover:border-white pb-0.5 transition-colors whitespace-nowrap"
-              >
-                VER UBICACIÓN
-              </a>
+            {/* Cream tint so the map reads as part of the page, not a pasted tile */}
+            <div className="absolute inset-0 z-[4] bg-cream/25 pointer-events-none" />
+
+            {/* Edge fades - dissolve all four sides into the cream */}
+            <div className="absolute inset-y-0 left-0 w-[14%] md:w-[18%] z-[5] bg-gradient-to-r from-cream via-cream/70 to-transparent pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-[14%] md:w-[18%] z-[5] bg-gradient-to-l from-cream via-cream/70 to-transparent pointer-events-none" />
+            <div className="absolute inset-x-0 top-0 h-[18%] z-[5] bg-gradient-to-b from-cream via-cream/70 to-transparent pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-[18%] z-[5] bg-gradient-to-t from-cream via-cream/70 to-transparent pointer-events-none" />
+          </Map>
+        </div>
+
+        {/* Direction Overlay Card - floats over the map */}
+        <div className="absolute bottom-12 md:bottom-16 left-6 right-6 md:left-1/2 md:-translate-x-1/2 md:w-[680px] z-30">
+          <div className="bg-[#153124]/95 backdrop-blur-md border border-gold/20 px-8 py-5 rounded-sm shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div className="flex items-center gap-4">
+              <span className="text-gold text-xs tracking-[0.2em] uppercase font-semibold border-r border-white/20 pr-4 shrink-0">
+                Dirección:
+              </span>
+              <p className="text-white text-xs md:text-[13px] font-light leading-relaxed">
+                Avenida Lomas Verdes & P.º de Lomas Verdes,
+                <br />
+                53125 Naucalpan de Juárez, Méx.
+              </p>
             </div>
+            <a
+              href="https://maps.google.com/?q=19.517566,-99.267787"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold hover:text-white text-[10px] tracking-[0.25em] uppercase font-semibold border-b border-gold hover:border-white pb-0.5 transition-colors whitespace-nowrap"
+            >
+              VER UBICACIÓN
+            </a>
           </div>
-        </Card>
+        </div>
       </div>
 
       {/* Puntos Cercanos - Uses sec_log.jpg directly as background (already green pre-rendered) */}

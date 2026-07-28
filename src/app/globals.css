@@ -11,10 +11,41 @@
   --color-gold-light: #decd98;
   --color-gold-dark: #a8904f;
   --color-warm: #cdaa91;
+  /* Error/alert terracotta. The palette had no failure colour and gold is far too
+     low-contrast to carry one. clay reads 7.2:1 on cream, clay-soft 6.4:1 on forest. */
+  --color-clay: #8c3a24;
+  --color-clay-soft: #e0a98f;
 
   /* Fonts */
   --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+}
+
+/* Measured height of the fixed Navbar on subpages, where it is always solid:
+   py-3 (12+12) + logo h-10 (40) + mb-3 (12) = 76px; md+ adds the link row (~20px).
+   Sticky rails and every scroll-mt on the subpages key off this, so it lives in one
+   place - if Navbar.tsx changes size, re-measure here and the pages follow. */
+:root {
+  --nav-h: 76px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-h: 96px;
+  }
+}
+
+/* Horizontal scrollers that carry their own affordance. Needed because the global
+   ::-webkit-scrollbar rule below paints every bar gold, which reads as decoration
+   inside a carousel. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
 }
 
 /* Smooth scrolling */
@@ -103,6 +134,56 @@ body {
   animation-delay: 0.6s;
 }
 
+/* Breathing rule that hints "there is more to scroll" on the gallery cover */
+@keyframes cue-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleX(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.animate-cue-pulse {
+  transform-origin: left center;
+  animation: cue-pulse 2.4s ease-in-out infinite;
+}
+
+/* Indeterminate progress rule for submit buttons */
+@keyframes rule-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+.animate-rule-sweep {
+  animation: rule-sweep 1.1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Chrome paints autofilled fields pale yellow, which wrecks the white form panel.
+   Scoped to .form-lomas so the home page keeps browser defaults. */
+.form-lomas input:-webkit-autofill,
+.form-lomas input:-webkit-autofill:hover,
+.form-lomas input:-webkit-autofill:focus,
+.form-lomas textarea:-webkit-autofill,
+.form-lomas select:-webkit-autofill {
+  -webkit-text-fill-color: #1b3c2d;
+  caret-color: #1b3c2d;
+  box-shadow: 0 0 0 1000px #fcf6f0 inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Safari keeps its own disclosure triangle even with list-none */
+summary::-webkit-details-marker {
+  display: none;
+}
+
 /* Premium Link Underline Animation */
 .nav-link-underline {
   position: relative;
@@ -124,5 +205,30 @@ body {
 .nav-link-underline:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+/* Honour the OS-level "reduce motion" preference across every animated surface,
+   including the inline transitions ScrollReveal writes. Elements still reach their
+   final state - they just arrive instantly instead of travelling. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Keep the basemap attribution readable above the map's edge-fade overlays */
+.maplibregl-ctrl-bottom-right,
+.maplibregl-ctrl-bottom-left {
+  z-index: 6;
 }
 

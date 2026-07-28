@@ -140,7 +140,7 @@ export default function ElDesarrollo() {
     </div>
 
       {/* Detail Section with Full-Width Sand-Gold Background (#decd99) */}
-      <div className="relative w-full bg-cream pt-8 pb-20 overflow-hidden">
+      <div className="relative w-full bg-cream pt-8 pb-0 overflow-hidden">
 
         {/* Full width container grid */}
         <div className="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-stretch relative">
@@ -165,6 +165,9 @@ export default function ElDesarrollo() {
 
           {/* Right Side: Full Side-to-Side Sand-Gold Block (#decd99) */}
           <div className="lg:col-span-6 bg-[#decd99] text-[#4a3e26] flex flex-col justify-center p-8 sm:p-12 md:p-16 lg:p-20 relative z-10">
+            {/* Right Sand-Gold Block extending to far-right edge of screen */}
+            <div className="absolute inset-y-0 left-0 -right-[50vw] bg-[#decd99] -z-10" />
+
             <ScrollReveal variant="fade-up" delay={150}>
               <h3 className="font-sans font-light text-2xl sm:text-4xl lg:text-[2.6rem] leading-tight mb-1 text-[#4a3e26]">
                 Vive en una torre residencial
@@ -193,16 +196,6 @@ export default function ElDesarrollo() {
               </div>
             </ScrollReveal>
           </div>
-        </div>
-
-        {/* Faint Isotipo Watermark at bottom */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none opacity-15 w-80 h-40 z-20">
-          <Image
-            src="/images/isotip3.svg"
-            alt=""
-            fill
-            className="object-contain object-bottom"
-          />
         </div>
 
       </div>

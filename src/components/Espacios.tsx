@@ -218,9 +218,15 @@ export default function Espacios() {
             </div>
 
             {/* Floor Plan Image Container with Pins and Popover Tooltip */}
-            <div className="relative w-full h-[450px] sm:h-[520px] lg:h-[580px] p-4 sm:p-6 md:p-8 flex items-center justify-center">
-              <div className="relative w-full h-full">
-                
+            <div className="relative w-full h-[450px] sm:h-[520px] md:h-[650px] lg:h-[780px] p-4 sm:p-6 md:p-8 flex items-center justify-center">
+              {/*
+                Hotspot coordinates are percentages of THIS box while the render is
+                object-contain inside it, so the box has to keep its original pixel
+                size or every pin drifts off the plan. Instead of resizing it, the
+                whole box is scaled up - render and pins grow together and stay aligned.
+              */}
+              <div className="relative w-full h-[418px] sm:h-[472px] md:h-[456px] lg:h-[516px] md:scale-[1.25] lg:scale-[1.35]">
+
                 {/* Render Image */}
                 <Image
                   key={selectedModel}
@@ -242,7 +248,8 @@ export default function Espacios() {
                       className="absolute -translate-x-1/2 -translate-y-1/2 z-20 group focus:outline-none cursor-pointer"
                       title={feat.name}
                     >
-                      <div className="relative flex items-center justify-center">
+                      {/* Counter-scale so only the render grows, not the pin */}
+                      <div className="relative flex items-center justify-center md:scale-[0.8] lg:scale-[0.74]">
                         {/* Pulse Ring when Active */}
                         {isActive && (
                           <div className="absolute w-8 h-8 rounded-full bg-amber-400/40 animate-ping" />
@@ -274,7 +281,7 @@ export default function Espacios() {
                       left: `${Math.min(Math.max(activeFeature.x - 18, 5), 55)}%`,
                       top: `${Math.min(Math.max(activeFeature.y - 12, 10), 65)}%`,
                     }}
-                    className="absolute z-30 w-72 sm:w-80 bg-[#1b2620]/95 backdrop-blur-md text-white border border-[#d4c491]/30 p-5 rounded-lg shadow-2xl transition-all duration-300 animate-fade-in pointer-events-auto"
+                    className="absolute z-30 w-72 sm:w-80 bg-[#1b2620]/95 backdrop-blur-md text-white border border-[#d4c491]/30 p-5 rounded-lg shadow-2xl transition-all duration-300 animate-fade-in pointer-events-auto origin-top-left md:scale-[0.8] lg:scale-[0.74]"
                   >
                     <div className="flex items-center justify-between mb-1">
                       <h4 className="font-sans text-base font-semibold tracking-wide text-white">

@@ -6,7 +6,7 @@ export default function ElDesarrollo() {
   return (
     <section
       id="el-desarrollo"
-      className="relative z-10 w-full shadow-[0_-25px_60px_rgba(0,0,0,0.4)]"
+      className="relative z-10 w-full"
       style={{ marginTop: "-8.72vw" }}
     >
       {/* Decorative V-line suspended inside the green section - Identical to Image 1 */}
@@ -183,13 +183,13 @@ export default function ElDesarrollo() {
               <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                 <Link
                   href="/contacto"
-                  className="border border-[#4a3e26]/30 bg-[#decd99]/60 hover:bg-[#decd99] text-[#4a3e26] font-sans text-xs sm:text-sm tracking-wide px-7 py-3.5 transition-all shadow-sm"
+                  className="border border-[#4a3e26]/30 bg-[#decd99]/60 hover:bg-[#4a3e26] hover:text-[#decd99] hover:border-[#4a3e26] text-[#4a3e26] font-sans text-xs sm:text-sm tracking-wide px-7 py-3.5 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer"
                 >
                   Solicitar información
                 </Link>
                 <Link
                   href="/espacios"
-                  className="bg-white hover:bg-white/95 text-[#4a3e26] font-sans text-xs sm:text-sm tracking-wide px-7 py-3.5 transition-all shadow-lg hover:shadow-xl"
+                  className="bg-white hover:bg-[#4a3e26] hover:text-white text-[#4a3e26] font-sans text-xs sm:text-sm tracking-wide px-7 py-3.5 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer"
                 >
                   Ver departamentos
                 </Link>

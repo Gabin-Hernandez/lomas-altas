@@ -14,148 +14,120 @@ export default function Contacto() {
   };
 
   return (
-    <section id="contacto" className="relative py-20 md:py-28 text-white overflow-hidden">
-      {/* Background Image: footer.jpg (already pre-rendered with green background) */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/footer.jpg"
-          alt="Contáctanos"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+    <section id="contacto" className="relative text-white bg-[#193628] overflow-hidden">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2">
         
-        {/* Section Header with Left and Right Lines */}
-        <ScrollReveal variant="fade-up" delay={100}>
-          <div className="flex items-center w-full max-w-4xl mx-auto gap-6 mb-16">
-            <div className="flex-1 h-px bg-white/20" />
-            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-white text-center whitespace-nowrap">
-              Contáctanos
-            </h2>
-            <div className="flex-1 h-px bg-white/20" />
+        {/* LEFT SIDE: Image background with architectural sketch + Checkmark list */}
+        <div className="relative flex flex-col justify-center px-8 py-16 md:px-14 lg:px-20 bg-[#193628] min-h-[500px]">
+          {/* Background Image restricted strictly to left half */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/footer.jpg"
+              alt="Lomas Altas Arquitectura"
+              fill
+              className="object-cover object-left-bottom opacity-90"
+              priority
+            />
+            {/* Subtle dark green overlay for contrast */}
+            <div className="absolute inset-0 bg-[#193628]/30" />
           </div>
-        </ScrollReveal>
 
-        {/* Split Layout */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mt-12">
-          
-          {/* Left Column: Why Choose Lomas Altas */}
-          <div className="w-full lg:w-5/12 text-left flex flex-col justify-center">
+          <div className="relative z-10 max-w-md mx-auto lg:mx-0 w-full">
             <ScrollReveal variant="slide-left" delay={150}>
-            <h3 className="font-serif text-3xl md:text-4xl text-white leading-tight mb-8">
-              ¿Por qué elegir Lomas Altas?
-            </h3>
-            
-            {/* Checked features list */}
-            <ul className="flex flex-col gap-5">
-              {[
-                { title: "Ubicación estratégica", desc: "En el corazón de Lomas Verdes, con accesos rápidos y cercanía a los mejores colegios y centros comerciales." },
-                { title: "Baja densidad", desc: "Un desarrollo exclusivo de solo 18 unidades que garantiza privacidad y tranquilidad para tu familia." },
-                { title: "Departamentos amplios", desc: "Espacios habitables de 105 m² con distribuciones óptimas, luz natural y acabados de primera calidad." }
-              ].map((item) => (
-                <li key={item.title} className="flex gap-4 items-start">
-                  {/* Gold Checkmark */}
-                  <span className="text-gold text-lg font-bold shrink-0 mt-0.5">✓</span>
-                  <div>
-                    <h4 className="text-white text-sm md:text-base font-semibold tracking-wide">
-                      {item.title}
-                    </h4>
-                    <p className="text-white/60 text-xs md:text-sm font-light mt-1 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </ScrollReveal>
-          </div>
+              <h2 className="font-serif text-3xl md:text-4xl text-cream font-normal leading-snug mb-10">
+                ¿Por qué elegir Lomas Altas?
+              </h2>
 
-          {/* Right Column: Contact Form */}
-          <div className="w-full lg:w-7/12 border-l border-white/10 lg:pl-16">
+              <ul className="flex flex-col gap-5">
+                {[
+                  "Ubicación estratégica",
+                  "Baja densidad",
+                  "Departamentos amplios",
+                  "Terrazas privadas",
+                  "Amenidades funcionales",
+                  "Plusvalía en Lomas Verdes",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-4 text-white/95 text-base md:text-lg">
+                    <span className="text-gold-light text-base md:text-lg font-bold shrink-0">✓</span>
+                    <span className="font-sans font-light tracking-wide">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE: Solid Green background + Contact Form */}
+        <div className="relative flex flex-col justify-center px-8 py-16 md:px-14 lg:px-20 bg-[#193628] border-t lg:border-t-0 lg:border-l border-white/15">
+          <div className="max-w-md mx-auto lg:mx-0 w-full">
             <ScrollReveal variant="slide-right" delay={200}>
-            <h3 className="text-gold text-xl font-serif font-light mb-2">
-              Agenda una cita y conoce el proyecto
-            </h3>
-            <p className="text-white/60 text-xs md:text-sm font-light mb-8">
-              Déjanos tus datos y te contactamos.
-            </p>
-            
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-              {/* Name */}
-              <div className="flex flex-col gap-1.5 border-b border-white/20 focus-within:border-gold pb-2 transition-colors duration-300">
-                <label htmlFor="contact-name" className="text-white/50 text-[10px] tracking-widest uppercase font-semibold">
-                  Nombre
-                </label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  required
-                  className="bg-transparent text-white text-sm focus:outline-none placeholder:text-white/25 w-full py-1"
-                  placeholder="Tu Nombre Completo"
-                />
-              </div>
+              <h3 className="font-serif text-2xl md:text-3xl text-gold-light font-light leading-snug mb-2">
+                Agenda una cita y conoce el proyecto
+              </h3>
+              <p className="text-white/70 text-sm font-sans font-light mb-10">
+                Déjanos tus datos y te contactamos.
+              </p>
 
-              {/* Email */}
-              <div className="flex flex-col gap-1.5 border-b border-white/20 focus-within:border-gold pb-2 transition-colors duration-300">
-                <label htmlFor="contact-email" className="text-white/50 text-[10px] tracking-widest uppercase font-semibold">
-                  Correo
-                </label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  required
-                  className="bg-transparent text-white text-sm focus:outline-none placeholder:text-white/25 w-full py-1"
-                  placeholder="tu@correo.com"
-                />
-              </div>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-7">
+                {/* NOMBRE */}
+                <div className="flex flex-col gap-1.5 border-b border-white/20 focus-within:border-gold pb-2 transition-colors duration-300">
+                  <label htmlFor="contact-name" className="text-white/80 text-[11px] tracking-[0.25em] uppercase font-sans font-medium">
+                    N O M B R E
+                  </label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    required
+                    className="bg-transparent text-white text-sm md:text-base focus:outline-none placeholder:text-white/30 w-full py-1 font-sans font-light"
+                    placeholder="Tu Nombre Completo"
+                  />
+                </div>
 
-              {/* Phone */}
-              <div className="flex flex-col gap-1.5 border-b border-white/20 focus-within:border-gold pb-2 transition-colors duration-300">
-                <label htmlFor="contact-phone" className="text-white/50 text-[10px] tracking-widest uppercase font-semibold">
-                  Teléfono
-                </label>
-                <input
-                  id="contact-phone"
-                  type="tel"
-                  required
-                  className="bg-transparent text-white text-sm focus:outline-none placeholder:text-white/25 w-full py-1"
-                  placeholder="55 1234 5678"
-                />
-              </div>
+                {/* CORREO */}
+                <div className="flex flex-col gap-1.5 border-b border-white/20 focus-within:border-gold pb-2 transition-colors duration-300">
+                  <label htmlFor="contact-email" className="text-white/80 text-[11px] tracking-[0.25em] uppercase font-sans font-medium">
+                    C O R R E O
+                  </label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    required
+                    className="bg-transparent text-white text-sm md:text-base focus:outline-none placeholder:text-white/30 w-full py-1 font-sans font-light"
+                    placeholder="tucorreo@ejemplo.com"
+                  />
+                </div>
 
-              {/* Message */}
-              <div className="flex flex-col gap-1.5 border-b border-white/20 focus-within:border-gold pb-2 transition-colors duration-300">
-                <label htmlFor="contact-message" className="text-white/50 text-[10px] tracking-widest uppercase font-semibold">
-                  Mensaje
-                </label>
-                <textarea
-                  id="contact-message"
-                  rows={2}
-                  className="bg-transparent text-white text-sm focus:outline-none placeholder:text-white/25 w-full py-1 resize-none"
-                  placeholder="¿En qué modelo estás interesado?"
-                />
-              </div>
+                {/* TELÉFONO */}
+                <div className="flex flex-col gap-1.5 border-b border-white/20 focus-within:border-gold pb-2 transition-colors duration-300">
+                  <label htmlFor="contact-phone" className="text-white/80 text-[11px] tracking-[0.25em] uppercase font-sans font-medium">
+                    T E L É F O N O
+                  </label>
+                  <input
+                    id="contact-phone"
+                    type="tel"
+                    required
+                    className="bg-transparent text-white text-sm md:text-base focus:outline-none placeholder:text-white/30 w-full py-1 font-sans font-light"
+                    placeholder="10 dígitos"
+                  />
+                </div>
 
-              {/* Submit Button */}
-              <div className="flex justify-center lg:justify-start mt-4">
-                <button
-                  type="submit"
-                  disabled={submitted}
-                  className="bg-transparent border border-gold hover:bg-gold text-gold hover:text-white font-medium text-xs tracking-[0.2em] uppercase px-12 py-4 rounded-sm hover:shadow-[0_0_20px_rgba(196,169,106,0.25)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 disabled:opacity-50"
-                >
-                  {submitted ? "¡Enviado!" : "Agenda Cita"}
-                </button>
-              </div>
-            </form>
-          </ScrollReveal>
+                {/* Submit Button */}
+                <div className="flex justify-center lg:justify-start mt-6">
+                  <button
+                    type="submit"
+                    disabled={submitted}
+                    className="bg-white/5 border border-white/30 hover:border-gold hover:bg-gold hover:text-[#193628] text-white font-sans text-xs md:text-sm tracking-[0.2em] uppercase px-10 py-3.5 rounded-none hover:shadow-[0_4px_25px_rgba(196,169,106,0.35)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 disabled:opacity-50 cursor-pointer"
+                  >
+                    {submitted ? "¡ENVIADO!" : "AGENDAR CITAS"}
+                  </button>
+                </div>
+              </form>
+            </ScrollReveal>
           </div>
-
         </div>
 
       </div>
     </section>
   );
 }
+

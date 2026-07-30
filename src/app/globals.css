@@ -207,6 +207,23 @@ summary::-webkit-details-marker {
   transform-origin: bottom left;
 }
 
+/* Universal Interactive Button Hover System */
+button,
+[role="button"] {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+button:hover:not(:disabled),
+[role="button"]:hover:not(:disabled) {
+  transform: translateY(-1.5px);
+}
+
+button:active:not(:disabled),
+[role="button"]:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
 /* Honour the OS-level "reduce motion" preference across every animated surface,
    including the inline transitions ScrollReveal writes. Elements still reach their
    final state - they just arrive instantly instead of travelling. */

@@ -824,7 +824,7 @@ export default function SolicitudForm() {
                         type="submit"
                         aria-disabled={enviando}
                         aria-busy={enviando}
-                        className="relative w-full overflow-hidden bg-forest px-12 py-4 font-sans text-xs font-medium uppercase tracking-[0.22em] text-cream transition-colors duration-300 hover:bg-forest-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-dark aria-disabled:cursor-not-allowed aria-disabled:opacity-60"
+                        className="relative w-full overflow-hidden bg-forest px-12 py-4 font-sans text-xs font-medium uppercase tracking-[0.22em] text-cream transition-all duration-300 hover:bg-gold hover:text-forest hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-dark aria-disabled:cursor-not-allowed aria-disabled:opacity-60"
                       >
                         {enviando && (
                           <span aria-hidden className="absolute inset-x-0 top-0 h-[2px] bg-gold/25">

@@ -199,10 +199,10 @@ export default function Espacios() {
                       setSelectedModel(model);
                       setActiveFeatureName("");
                     }}
-                    className={`flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-sans tracking-wide transition-all ${
+                    className={`flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-sans tracking-wide transition-all duration-200 cursor-pointer ${
                       selectedModel === model
-                        ? "bg-white border border-[#5c4a2c]/20 text-[#5c4a2c] font-normal shadow-xs rounded-t-sm"
-                        : "text-[#5c4a2c]/65 hover:text-[#5c4a2c] font-light"
+                        ? "bg-white border border-[#5c4a2c]/20 text-[#5c4a2c] font-normal shadow-sm rounded-t-sm -translate-y-0.5"
+                        : "text-[#5c4a2c]/65 hover:text-[#5c4a2c] hover:bg-white/60 font-light hover:-translate-y-0.5"
                     }`}
                   >
                     {selectedModel === model && (

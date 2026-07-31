@@ -39,9 +39,12 @@ export const metadata: Metadata = {
     "torre residencial",
   ],
   icons: {
-    icon: "/icon.png",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png" },
+    ],
     shortcut: "/icon.png",
-    apple: "/icon.png",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: "Lomas Altas — El hogar donde todo crece",

@@ -187,7 +187,7 @@ export default function Ubicacion() {
                     alt="Colegio Alemán"
                     width={80}
                     height={80}
-                    className="w-full h-full object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition-opacity"
+                    className="w-full h-full object-contain opacity-85 group-hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <span className="text-[#d4c491] text-xs md:text-sm font-serif tracking-wide">
@@ -215,7 +215,7 @@ export default function Ubicacion() {
               <div className="flex flex-col items-center text-center gap-3 group">
                 <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
-                    src="/images/logo3.svg"
+                    src="/images/logo5.svg"
                     alt="Colegio Carol Baur"
                     width={80}
                     height={80}
@@ -231,11 +231,11 @@ export default function Ubicacion() {
               <div className="flex flex-col items-center text-center gap-3 group">
                 <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
-                    src="/images/logo3.svg"
+                    src="/images/logo_uvm.png"
                     alt="UVM Lomas"
                     width={80}
                     height={80}
-                    className="w-full h-full object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition-opacity"
+                    className="w-full h-full object-contain opacity-85 group-hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <span className="text-[#d4c491] text-xs md:text-sm font-serif tracking-wide">
@@ -252,7 +252,7 @@ export default function Ubicacion() {
               <div className="flex flex-col items-center text-center gap-3 group">
                 <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
-                    src="/images/logo4.svg"
+                    src="/images/logo3.svg"
                     alt="Plaza Satélite"
                     width={80}
                     height={80}
@@ -268,7 +268,7 @@ export default function Ubicacion() {
               <div className="flex flex-col items-center text-center gap-3 group">
                 <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
-                    src="/images/logo5.svg"
+                    src="/images/logo4.svg"
                     alt="Bellavista Country"
                     width={80}
                     height={80}
@@ -284,11 +284,11 @@ export default function Ubicacion() {
               <div className="col-span-2 md:col-span-1 flex flex-col items-center text-center gap-3 group">
                 <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
-                    src="/images/logo4.svg"
+                    src="/images/logo_chamapa.png"
                     alt="Chamapa-Lechería"
                     width={80}
                     height={80}
-                    className="w-full h-full object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition-opacity"
+                    className="w-full h-full object-contain opacity-85 group-hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <span className="text-[#d4c491] text-xs md:text-sm font-serif tracking-wide">

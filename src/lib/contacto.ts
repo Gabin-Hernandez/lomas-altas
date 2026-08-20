@@ -37,10 +37,10 @@ export const CONTACTO = {
 export const MODELOS = [
   { valor: "", etiqueta: "Selecciona una opción" },
   { valor: "Aún no lo sé", etiqueta: "Aún no lo sé" },
-  { valor: "Modelo A — 105 m²", etiqueta: "Modelo A — 105 m²" },
-  { valor: "Modelo B — 105 m²", etiqueta: "Modelo B — 105 m²" },
-  { valor: "Modelo C — 105 m²", etiqueta: "Modelo C — 105 m²" },
-  { valor: "Penthouse", etiqueta: "Penthouse" },
+  { valor: "Tipología A — Nivel Jardín (351.36 m²)", etiqueta: "Tipología A — Nivel Jardín (351.36 m²)" },
+  { valor: "Tipología A (191.00 m²)", etiqueta: "Tipología A (191.00 m²)" },
+  { valor: "Tipología B (188.94 m²)", etiqueta: "Tipología B (188.94 m²)" },
+  { valor: "Tipología A — Penthouse (384.84 m²)", etiqueta: "Tipología A — Penthouse (384.84 m²)" },
   { valor: "Quiero comparar todos", etiqueta: "Quiero comparar todos" },
 ];
 

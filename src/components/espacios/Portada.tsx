@@ -36,19 +36,15 @@ export default function Portada() {
 
           <SafeReveal variant="fade-up" className="col-span-4 md:col-span-12 lg:col-span-7">
             <h1 className="max-w-[16ch] font-sans text-[2.5rem] font-light leading-[0.98] tracking-[-0.02em] text-[#153223] sm:text-[3.25rem] lg:text-[4.5rem]">
-              <span className="block">Cuatro maneras</span>
-              {/* #8a7238 and not #a8904f: at this size #a8904f would pass as large
-                  text, but keeping one readable gold avoids an exception that
-                  someone later copies onto a 10px label. */}
+              <span className="block">Cuatro tipologías</span>
               <span className="block font-serif font-normal italic text-[#8a7238]">
-                de habitar 105 m²
+                diseñadas a detalle
               </span>
             </h1>
             <p className="mt-7 max-w-[46ch] font-sans text-[15px] font-light leading-[1.65] text-[#5c4a2c]/85 md:text-[17px]">
-              Dieciocho unidades en cinco niveles. Una misma planta de 105 m² colocada en cuatro
-              posiciones distintas dentro de la torre: lo que cambia no es la superficie, sino la
-              orientación, el exterior y la vista. Aquí está la planta, los acabados y el nivel en
-              el que vive cada tipología.
+              Dieciocho unidades exclusivas en cinco niveles. Cuatro modelos con superficies desde
+              188.94 m² hasta 384.84 m² totales, terrazas techadas en fachada, jardines privados en
+              planta baja y penthouses con terrazas panorámicas.
             </p>
           </SafeReveal>
 
@@ -76,12 +72,8 @@ export default function Portada() {
           <div className="col-span-4 mt-14 flex items-center gap-4 md:col-span-12 md:mt-20">
             <span aria-hidden className="h-2.5 w-px bg-[#a8904f]/60" />
             <span aria-hidden className="h-px flex-1 bg-[#a8904f]/60" />
-            {/* No shrink-0: at 320px the tracked label is wider than the column
-                and would push the page into horizontal scroll. Let it wrap.
-                #7d6731 and not #8a7238: at 10px this is normal text and needs
-                4.5:1 — #8a7238 gives 4.31:1 on cream, #7d6731 gives 5.08:1. */}
             <span className="text-center font-sans text-[10px] font-semibold uppercase tracking-[0.24em] text-[#7d6731]">
-              105 m² · 2 cajones · 18 unidades · 5 niveles
+              188 a 385 m² · 4 tipologías · 18 unidades · 5 niveles
             </span>
             <span aria-hidden className="h-px flex-1 bg-[#a8904f]/60" />
             <span aria-hidden className="h-2.5 w-px bg-[#a8904f]/60" />

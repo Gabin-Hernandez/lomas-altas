@@ -13,12 +13,12 @@ import Tipologias from "@/components/espacios/Tipologias";
 export const metadata: Metadata = {
   title: "Espacios y distribuciones — Lomas Altas",
   description:
-    "Cuatro tipologías de 105 m² en una torre de 18 unidades y 5 niveles en Lomas Verdes, Naucalpan. Planta tipo interactiva, acabados de serie y el corte del edificio nivel por nivel.",
+    "Cuatro tipologías residenciales desde 188.94 m² hasta 384.84 m² en una torre de 18 unidades y 5 niveles en Lomas Verdes, Naucalpan. Fichas de prototipos, renders hiperrealistas y corte del edificio nivel por nivel.",
   alternates: { canonical: "/espacios" },
   openGraph: {
     title: "Espacios y distribuciones — Lomas Altas",
     description:
-      "Una misma planta de 105 m² en cuatro posiciones dentro de la torre. Recorre la distribución, los acabados y el corte por niveles.",
+      "Cuatro tipologías residenciales diseñadas a medida: Nivel Jardín, Tipología A, Tipología B y Penthouses. Recorre la distribución, acabados y renders.",
     url: "/espacios",
     type: "website",
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Espacios y distribuciones — Lomas Altas",
     description:
-      "Cuatro tipologías de 105 m², planta tipo interactiva y el corte del edificio nivel por nivel.",
+      "Cuatro tipologías residenciales desde 188.94 m² hasta 384.84 m², plantas interactivas y renders dedicados.",
     images: ["/images/eyecatcher.jpg"],
   },
 };

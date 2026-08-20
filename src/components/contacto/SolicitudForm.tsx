@@ -346,6 +346,23 @@ export default function SolicitudForm() {
 
   useEffect(() => {
     montadoEnRef.current = Date.now();
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const modParam = params.get("modelo");
+      if (modParam) {
+        const found = MODELOS.find(
+          (m) =>
+            (m.valor && m.valor.toLowerCase().includes(modParam.toLowerCase())) ||
+            (modParam === "ta-nj-pb" && m.valor.includes("Nivel Jardín")) ||
+            (modParam === "ta" && m.valor === "Tipología A (191.00 m²)") ||
+            (modParam === "tb" && m.valor.includes("Tipología B")) ||
+            (modParam === "ta-ph-pb" && m.valor.includes("Penthouse"))
+        );
+        if (found && found.valor) {
+          setValores((prev) => ({ ...prev, modelo: found.valor }));
+        }
+      }
+    }
   }, []);
 
   useEffect(() => {

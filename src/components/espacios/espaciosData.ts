@@ -548,34 +548,34 @@ export const NIVELES: readonly Nivel[] = [
 
 export const FIGURAS: readonly LightboxItem[] = [
   {
-    src: "/images/lomas2.jpeg",
+    src: "/images/3.png",
     alt: "Estancia y comedor abiertos hacia la terraza con cancelería de piso a techo",
     title: "Fig. 03 — Estancia y comedor",
     caption:
       "Estancia y comedor abiertos a la terraza, sin muros intermedios. El cancel filtra la vista y baña de luz la estancia.",
   },
   {
-    src: "/images/lomas3.jpeg",
+    src: "/images/10.png",
     alt: "Cocina integral con frentes de madera clara, electrodomésticos empotrados y cubierta de granito",
     title: "Fig. 04 — Cocina integral",
     caption:
       "Cocina integral con frentes de madera clara, electrodomésticos empotrados y cubierta de granito.",
   },
   {
-    src: "/images/lomas5.jpeg",
+    src: "/images/9.png",
     alt: "Baño principal con doble lavabo sobre mueble de madera, muros de travertino y regadera a ras de piso",
     title: "Fig. 05 — Baño principal",
     caption:
       "Baño principal: doble lavabo sobre mueble de madera, travertino en muros y regadera a ras de piso.",
   },
   {
-    src: "/images/lomas4.jpeg",
+    src: "/images/7.png",
     alt: "Sala con cancelería corrediza de piso a techo abierta hacia la terraza ajardinada",
     title: "Fig. 06 — Sala",
     caption: "Sala con cancelería corrediza de piso a techo hacia la terraza ajardinada.",
   },
   {
-    src: "/images/lomas1.jpeg",
+    src: "/images/4.png",
     alt: "Gimnasio del edificio en planta baja, con ventanales hacia el jardín",
     title: "Fig. 07 — Gimnasio",
     caption: "Gimnasio del edificio, en planta baja, con ventanales al jardín.",

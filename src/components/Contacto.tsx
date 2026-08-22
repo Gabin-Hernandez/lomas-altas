@@ -20,16 +20,16 @@ export default function Contacto() {
         {/* LEFT SIDE: Image background with architectural sketch + Checkmark list */}
         <div className="relative flex flex-col justify-center px-8 py-16 md:px-14 lg:px-20 bg-[#193628] min-h-[500px]">
           {/* Background Image restricted strictly to left half */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 bg-[#19392a]">
             <Image
-              src="/images/footer.jpg"
+              src="/images/home.jpg"
               alt="Lomas Altas Arquitectura"
               fill
-              className="object-cover object-left-bottom opacity-90"
+              unoptimized
+              quality={100}
+              className="object-cover object-center"
               priority
             />
-            {/* Subtle dark green overlay for contrast */}
-            <div className="absolute inset-0 bg-[#193628]/30" />
           </div>
 
           <div className="relative z-10 max-w-md mx-auto lg:mx-0 w-full">

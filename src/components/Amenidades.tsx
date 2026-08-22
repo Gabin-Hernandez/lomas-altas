@@ -8,7 +8,7 @@ interface AmenityCard {
   title: string;
   img: string;
   widthClass: string;
-  aspectPosition?: string;
+  objectPos?: string;
 }
 
 export default function Amenidades() {
@@ -31,38 +31,50 @@ export default function Amenidades() {
   const cardRows: AmenityCard[][] = [
     [
       {
-        title: "Gimnasio",
-        img: "/images/lomas1.jpeg",
+        title: "Gimnasio Equipado",
+        img: "/images/4.png",
         widthClass: "w-full md:w-[55%]",
       },
       {
-        title: "Comedor & Estancia",
-        img: "/images/lomas2.jpeg",
+        title: "Roof Garden & Terraza",
+        img: "/images/6.png",
         widthClass: "w-full md:w-[45%]",
       },
     ],
     [
       {
-        title: "Cocina",
-        img: "/images/lomas3.jpeg",
-        widthClass: "w-full md:w-[35%]",
+        title: "Lobby & Recepción",
+        img: "/images/1.png",
+        widthClass: "w-full md:w-[40%]",
       },
       {
-        title: "Sala & Terraza",
-        img: "/images/lomas4.jpeg",
-        widthClass: "w-full md:w-[65%]",
+        title: "Salón de Convivencia",
+        img: "/images/2.png",
+        widthClass: "w-full md:w-[60%]",
       },
     ],
     [
       {
-        title: "Baño Principal",
-        img: "/images/lomas5.jpeg",
-        widthClass: "w-full md:w-[60%]",
+        title: "Comedor Social & Eventos",
+        img: "/images/3.png",
+        widthClass: "w-full md:w-[50%]",
       },
       {
-        title: "Vista Exterior",
-        img: "/images/eyecatcher.jpg",
-        widthClass: "w-full md:w-[40%]",
+        title: "Estacionamiento & Bodegas",
+        img: "/images/5.png",
+        widthClass: "w-full md:w-[50%]",
+      },
+    ],
+    [
+      {
+        title: "Cocina Integral Gourmet",
+        img: "/images/10.png",
+        widthClass: "w-full md:w-[42%]",
+      },
+      {
+        title: "Sala & Terraza Privada",
+        img: "/images/7.png",
+        widthClass: "w-full md:w-[58%]",
       },
     ],
   ];
@@ -83,7 +95,7 @@ export default function Amenidades() {
           </div>
         </ScrollReveal>
 
-        {/* Custom Asymmetric Masonry-style Grid with Lightbox Zoom on Click */}
+        {/* Custom Asymmetric Masonry Grid with Lightbox Zoom on Click */}
         <div className="flex flex-col gap-6 sm:gap-8 max-w-[1550px] mx-auto">
           {cardRows.map((row, rowIndex) => (
             <ScrollReveal key={rowIndex} variant="fade-up" delay={150 + rowIndex * 100}>
@@ -92,14 +104,14 @@ export default function Amenidades() {
                   <div
                     key={card.title}
                     onClick={() => setActiveModalImage({ src: card.img, title: card.title })}
-                    className={`${card.widthClass} h-[300px] sm:h-[400px] lg:h-[480px] relative rounded-sm overflow-hidden shadow-xl border border-white/20 group cursor-pointer`}
+                    className={`${card.widthClass} aspect-[16/10] md:h-[360px] lg:h-[440px] relative rounded-sm overflow-hidden shadow-xl border border-white/20 group cursor-pointer`}
                   >
                     {/* Corner Ribbon / Triangle Header */}
                     <div 
-                      className="absolute top-0 left-0 bg-[#153124] w-[320px] sm:w-[380px] h-[60px] sm:h-[70px] z-10 flex items-start pl-5 pt-3.5 transition-transform duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-0.5"
+                      className="absolute top-0 left-0 bg-[#153124] w-[340px] sm:w-[420px] lg:w-[460px] h-[65px] sm:h-[75px] z-10 flex items-start pl-4 sm:pl-5 pt-3 sm:pt-3.5 transition-transform duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-0.5"
                       style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
                     >
-                      <span className="text-white text-sm sm:text-base font-serif tracking-wide">
+                      <span className="text-white text-xs sm:text-sm md:text-base font-serif tracking-wide">
                         {card.title}
                       </span>
                     </div>
@@ -109,8 +121,9 @@ export default function Amenidades() {
                       src={card.img}
                       alt={card.title}
                       fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      className={`object-cover ${card.objectPos || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-105`}
                       priority
+                      quality={95}
                     />
 
                     {/* Subtle Overlay on Hover */}
@@ -172,6 +185,7 @@ export default function Amenidades() {
                 fill
                 className="object-contain"
                 priority
+                quality={100}
               />
             </div>
           </div>

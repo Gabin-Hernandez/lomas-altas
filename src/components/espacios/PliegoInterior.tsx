@@ -68,16 +68,10 @@ export default function PliegoInterior() {
         </div>
       </div>
 
-      {/* PLATE A — full bleed.
-          lomas2.jpeg is 1600x772 and its solid artefact band starts at y=598,
-          i.e. 77.46% down. With object-cover object-top the visible fraction is
-          2.0725/R, so R must be >= 2.675. aspect-[14/5] (R=2.8) shows the top
-          74.0% and leaves 3.5 points of margin. Do NOT use aspect-[1600/597]
-          (R=2.680): it clears the band by one pixel and the JPEG bleed leaves a
-          dark line. NEVER object-center here. */}
+      {/* PLATE A — full bleed. */}
       <SafeReveal variant="fade-up" delay={120}>
         <figure className="relative left-1/2 mt-14 w-screen -translate-x-1/2 md:mt-20">
-          <div className="relative aspect-[14/5] w-full overflow-hidden">
+          <div className="relative aspect-[16/7] w-full overflow-hidden">
             <button
               type="button"
               onClick={() => setLightbox(0)}
@@ -85,28 +79,25 @@ export default function PliegoInterior() {
               className={`absolute inset-0 ${ANILLO_PLACA}`}
             >
               <Image
-                src="/images/lomas2.jpeg"
+                src="/images/3.png"
                 alt={figuras[0].alt}
                 fill
                 sizes="100vw"
                 loading="lazy"
-                className="object-cover object-top"
+                className="object-cover object-center"
               />
             </button>
             <div
               aria-hidden
-              className="pointer-events-none absolute left-0 top-0 z-10 h-[56px] w-[300px] bg-[#153124] pl-5 pt-3.5 md:h-[70px] md:w-[380px] md:pl-7"
+              className="pointer-events-none absolute left-0 top-0 z-10 w-[340px] md:w-[420px] h-[65px] md:h-[75px] bg-[#153124] pl-5 pt-3.5 md:pl-7"
               style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
             >
-              <span className="font-serif text-sm tracking-[0.02em] text-white md:text-base">
+              <span className="font-serif text-sm tracking-[0.02em] text-white md:text-base whitespace-nowrap">
                 Estancia y comedor
               </span>
             </div>
           </div>
 
-          {/* The caption returns to the master grid but stays a DIRECT child of
-              <figure>: a figcaption nested inside wrappers is not associated
-              with its figure. */}
           <figcaption className="mx-auto grid w-full max-w-[1440px] grid-cols-4 gap-x-5 px-6 md:grid-cols-12 md:gap-x-6 md:px-10 lg:px-16">
             <span className={`col-start-1 col-span-4 mt-4 block md:col-start-8 md:col-span-5 ${EPIGRAFE}`}>
               <Epigrafe n="03">
@@ -119,15 +110,10 @@ export default function PliegoInterior() {
       </SafeReveal>
 
       <div className={RETICULA}>
-        {/* PLATE B — asymmetric pair. Columns 11–12 stay empty: that gap is the
-            air of the monograph, it does not get filled. */}
+        {/* PLATE B — asymmetric pair. */}
         <div className={`${GRID} mt-20 md:mt-32`}>
           <SafeReveal variant="fade-up" className="col-span-4 md:col-span-5">
             <figure>
-              {/* lomas3.jpeg (732x636) has 3 dark rows along the TOP edge and ~5
-                  dark columns along the RIGHT edge; the left edge is clean.
-                  scale-[1.04] inside overflow-hidden eats ~1.9% per side and
-                  removes both defects. */}
               <div className="relative aspect-[4/3] overflow-hidden">
                 <button
                   type="button"
@@ -136,12 +122,12 @@ export default function PliegoInterior() {
                   className={`absolute inset-0 ${ANILLO_PLACA}`}
                 >
                   <Image
-                    src="/images/lomas3.jpeg"
+                    src="/images/10.png"
                     alt={figuras[1].alt}
                     fill
                     sizes="(min-width:768px) 40vw, 92vw"
                     loading="lazy"
-                    className="scale-[1.04] object-cover object-center"
+                    className="object-cover object-center"
                   />
                 </button>
               </div>
@@ -160,10 +146,7 @@ export default function PliegoInterior() {
             className="col-span-4 mt-14 md:col-span-4 md:col-start-8 md:mt-0 lg:mt-24"
           >
             <figure>
-              {/* lomas5.jpeg (586x840) verified clean: native ratio, zero crop.
-                  The only natively vertical image of the set; its lg:mt-24 offset
-                  is the editorial gesture of the plate. */}
-              <div className="relative aspect-[586/840] overflow-hidden">
+              <div className="relative aspect-[1398/2036] overflow-hidden">
                 <button
                   type="button"
                   onClick={() => setLightbox(2)}
@@ -171,12 +154,12 @@ export default function PliegoInterior() {
                   className={`absolute inset-0 ${ANILLO_PLACA}`}
                 >
                   <Image
-                    src="/images/lomas5.jpeg"
+                    src="/images/9.png"
                     alt={figuras[2].alt}
                     fill
                     sizes="(min-width:768px) 32vw, 92vw"
                     loading="lazy"
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </button>
               </div>
@@ -207,13 +190,7 @@ export default function PliegoInterior() {
             className="col-span-4 mt-10 md:col-span-8 md:col-start-5 md:mt-0"
           >
             <figure>
-              {/* lomas4.jpeg (590x472): the artefact is a dark BROWN block
-                  (#504031 / #382517) in the bottom-right corner, from x~87% and
-                  y~94.5% — a "near-black pixels" search never finds it and
-                  scale-105 is not enough. aspect-[3/2] + object-top shows the top
-                  83.3% and clears it. A taller container does NOT work: with
-                  object-cover it keeps the full height and the block returns. */}
-              <div className="relative aspect-[3/2] overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <button
                   type="button"
                   onClick={() => setLightbox(3)}
@@ -221,12 +198,12 @@ export default function PliegoInterior() {
                   className={`absolute inset-0 ${ANILLO_PLACA}`}
                 >
                   <Image
-                    src="/images/lomas4.jpeg"
+                    src="/images/7.png"
                     alt={figuras[3].alt}
                     fill
                     sizes="(min-width:768px) 62vw, 92vw"
                     loading="lazy"
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                   />
                 </button>
               </div>
@@ -239,8 +216,7 @@ export default function PliegoInterior() {
           </SafeReveal>
         </div>
 
-        {/* PLATE D — amenity, labelled as such. Filing the gym with the
-            apartment interiors would be misleading. */}
+        {/* PLATE D — amenity, labelled as such. */}
         <div className={`${GRID} mt-16`}>
           <SafeReveal
             variant="fade-up"
@@ -258,12 +234,12 @@ export default function PliegoInterior() {
                   className={`absolute inset-0 ${ANILLO_PLACA}`}
                 >
                   <Image
-                    src="/images/lomas1.jpeg"
+                    src="/images/4.png"
                     alt={figuras[4].alt}
                     fill
                     sizes="(min-width:768px) 48vw, 92vw"
                     loading="lazy"
-                    className="object-cover object-[center_40%]"
+                    className="object-cover object-center"
                   />
                 </button>
               </div>

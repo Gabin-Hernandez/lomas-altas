@@ -104,14 +104,14 @@ export default function Amenidades() {
                   <div
                     key={card.title}
                     onClick={() => setActiveModalImage({ src: card.img, title: card.title })}
-                    className={`${card.widthClass} aspect-[16/10] md:h-[360px] lg:h-[440px] relative rounded-sm overflow-hidden shadow-xl border border-white/20 group cursor-pointer`}
+                    className={`${card.widthClass} aspect-[16/10] md:h-[360px] lg:h-[440px] relative rounded-sm overflow-hidden shadow-xl border-0 group cursor-pointer`}
                   >
                     {/* Corner Ribbon / Triangle Header */}
                     <div 
-                      className="absolute top-0 left-0 bg-[#153124] w-[340px] sm:w-[420px] lg:w-[460px] h-[65px] sm:h-[75px] z-10 flex items-start pl-4 sm:pl-5 pt-3 sm:pt-3.5 transition-transform duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-0.5"
+                      className="absolute top-0 left-0 bg-[#153124] w-[82%] sm:w-[380px] lg:w-[440px] max-w-[340px] sm:max-w-none h-[60px] sm:h-[72px] z-10 flex items-start pl-4 sm:pl-5 pt-3 sm:pt-3.5 transition-transform duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-0.5"
                       style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
                     >
-                      <span className="text-white text-xs sm:text-sm md:text-base font-serif tracking-wide">
+                      <span className="text-white text-xs sm:text-sm md:text-base font-serif tracking-wide pr-4">
                         {card.title}
                       </span>
                     </div>
@@ -121,9 +121,10 @@ export default function Amenidades() {
                       src={card.img}
                       alt={card.title}
                       fill
+                      unoptimized
+                      quality={100}
                       className={`object-cover ${card.objectPos || 'object-center'} transition-transform duration-700 ease-out group-hover:scale-105`}
                       priority
-                      quality={95}
                     />
 
                     {/* Subtle Overlay on Hover */}
@@ -183,9 +184,10 @@ export default function Amenidades() {
                 src={activeModalImage.src}
                 alt={activeModalImage.title}
                 fill
+                unoptimized
+                quality={100}
                 className="object-contain"
                 priority
-                quality={100}
               />
             </div>
           </div>

@@ -42,13 +42,13 @@ const modelData: Record<string, ModelInfo> = {
       total: "351.36 m²",
     },
     features: [
-      { name: "Jardín privado", tag: "EXTERIOR EXCLUSIVO", desc: "46.39 m² de jardín privado con conexión directa a la estancia.", x: 30, y: 75 },
-      { name: "Estancia en doble altura", tag: "ÁREA SOCIAL", desc: "Área social amplia y luminosa integrada con ventanales hacia el jardín.", x: 54, y: 60 },
-      { name: "Comedor formal", tag: "ÁREA FORMAL", desc: "Capacidad para 8 comensales con paso directo a la cocina.", x: 60, y: 46 },
-      { name: "Cocina integral equipada", tag: "EQUIPAMIENTO PREMIUM", desc: "Cubierta de granito, frentes en madera clara y electrodomésticos empotrados.", x: 58, y: 18 },
-      { name: "Master Suite (PA)", tag: "SUITE PRINCIPAL", desc: "Recámara principal en planta alta con vestidor walk-in y baño propio.", x: 31, y: 35 },
-      { name: "Recámaras secundarias", tag: "HABITACIONES", desc: "Habitaciones amplias con clóset y luz natural.", x: 35, y: 20 },
-      { name: "Terraza techada", tag: "TERRAZA PRIVADA", desc: "41.17 m² techados con vista y acceso al jardín.", x: 48, y: 82 },
+      { name: "Jardín privado", tag: "EXTERIOR EXCLUSIVO", desc: "46.39 m² de jardín privado con conexión directa a la estancia.", x: 32, y: 72 },
+      { name: "Estancia en doble altura", tag: "ÁREA SOCIAL", desc: "Área social amplia y luminosa integrada con ventanales hacia el jardín.", x: 42, y: 55 },
+      { name: "Comedor formal", tag: "ÁREA FORMAL", desc: "Capacidad para 8 comensales con paso directo a la cocina.", x: 52, y: 46 },
+      { name: "Cocina integral equipada", tag: "EQUIPAMIENTO PREMIUM", desc: "Cubierta de granito, frentes en madera clara y electrodomésticos empotrados.", x: 50, y: 22 },
+      { name: "Master Suite (PA)", tag: "SUITE PRINCIPAL", desc: "Recámara principal en planta alta con vestidor walk-in y baño propio.", x: 30, y: 35 },
+      { name: "Recámaras secundarias", tag: "HABITACIONES", desc: "Habitaciones amplias con clóset y luz natural.", x: 30, y: 22 },
+      { name: "Terraza techada", tag: "TERRAZA PRIVADA", desc: "41.17 m² techados con vista y acceso al jardín.", x: 44, y: 68 },
     ],
     acabados: [
       "Jardín privado sin techar de 46.39 m²",
@@ -70,13 +70,13 @@ const modelData: Record<string, ModelInfo> = {
       total: "191.00 m²",
     },
     features: [
-      { name: "Estancia corrida", tag: "ÁREA SOCIAL", desc: "Espacio amplio y luminoso sin muros intermedios y vista a la terraza.", x: 54, y: 67 },
-      { name: "Comedor", tag: "ÁREA FORMAL", desc: "Área formal de comedor para 8 comensales conectada a la cocina.", x: 57, y: 50 },
-      { name: "Cocina integral", tag: "EQUIPAMIENTO PREMIUM", desc: "Cocina equipada con barra desayunador y cubierta de granito.", x: 58, y: 14 },
-      { name: "Recámara principal", tag: "SUITE PRINCIPAL", desc: "Master suite con cama King Size, walk-in closet y baño completo.", x: 31, y: 64 },
-      { name: "Recámaras secundarias", tag: "HABITACIONES", desc: "Dos recámaras secundarias con clóset y luz natural.", x: 35, y: 46 },
-      { name: "Estudio / Family Room", tag: "MULTIUSOS", desc: "Área flexible para oficina o sala de televisión.", x: 44, y: 15 },
-      { name: "Terraza techada", tag: "EXTERIOR", desc: "Terraza frontal corrida de 41 m² con jardineras integradas.", x: 48, y: 86 },
+      { name: "Estancia corrida", tag: "ÁREA SOCIAL", desc: "Espacio amplio y luminoso sin muros intermedios y vista a la terraza.", x: 42, y: 56 },
+      { name: "Comedor", tag: "ÁREA FORMAL", desc: "Área formal de comedor para 8 comensales conectada a la cocina.", x: 52, y: 46 },
+      { name: "Cocina integral", tag: "EQUIPAMIENTO PREMIUM", desc: "Cocina equipada con barra desayunador y cubierta de granito.", x: 50, y: 22 },
+      { name: "Recámara principal", tag: "SUITE PRINCIPAL", desc: "Master suite con cama King Size, walk-in closet y baño completo.", x: 30, y: 58 },
+      { name: "Recámaras secundarias", tag: "HABITACIONES", desc: "Dos recámaras secundarias con clóset y luz natural.", x: 30, y: 36 },
+      { name: "Estudio / Family Room", tag: "MULTIUSOS", desc: "Área flexible para oficina o sala de televisión.", x: 38, y: 22 },
+      { name: "Terraza techada", tag: "EXTERIOR", desc: "Terraza frontal corrida de 41 m² con jardineras integradas.", x: 44, y: 72 },
     ],
     acabados: [
       "150 m² interiores + 41 m² de terraza",
@@ -98,12 +98,12 @@ const modelData: Record<string, ModelInfo> = {
       total: "188.94 m²",
     },
     features: [
-      { name: "Estancia social", tag: "ÁREA SOCIAL", desc: "Área social fluida conectada con la terraza frontal.", x: 54, y: 67 },
-      { name: "Comedor", tag: "ÁREA FORMAL", desc: "Comedor con capacidad para 6-8 comensales.", x: 57, y: 50 },
-      { name: "Cocina gourmet", tag: "COCINA INTEGRAL", desc: "Cocina de diseño contemporáneo con barra de trabajo.", x: 58, y: 14 },
-      { name: "Recámara principal", tag: "SUITE", desc: "Suite principal con baño privado y clóset vestidor.", x: 31, y: 64 },
-      { name: "Recámaras secundarias", tag: "HABITACIONES", desc: "Recámaras privadas con ventilación natural.", x: 35, y: 46 },
-      { name: "Terraza techada", tag: "EXTERIOR", desc: "35.60 m² de terraza techada.", x: 48, y: 86 },
+      { name: "Estancia social", tag: "ÁREA SOCIAL", desc: "Área social fluida conectada con la terraza frontal.", x: 42, y: 56 },
+      { name: "Comedor", tag: "ÁREA FORMAL", desc: "Comedor con capacidad para 6-8 comensales.", x: 52, y: 46 },
+      { name: "Cocina gourmet", tag: "COCINA INTEGRAL", desc: "Cocina de diseño contemporáneo con barra de trabajo.", x: 50, y: 22 },
+      { name: "Recámara principal", tag: "SUITE", desc: "Suite principal con baño privado y clóset vestidor.", x: 30, y: 58 },
+      { name: "Recámaras secundarias", tag: "HABITACIONES", desc: "Recámaras privadas con ventilación natural.", x: 30, y: 36 },
+      { name: "Terraza techada", tag: "EXTERIOR", desc: "35.60 m² de terraza techada.", x: 44, y: 72 },
     ],
     acabados: [
       "153.34 m² interiores + 35.6 m² terraza",
@@ -126,12 +126,12 @@ const modelData: Record<string, ModelInfo> = {
       total: "384.84 m²",
     },
     features: [
-      { name: "Terraza monumental", tag: "TERRAZA PRIVADA", desc: "82 m² de terraza techada con vistas panorámicas a toda la cañada.", x: 48, y: 86 },
-      { name: "Patio en azotea", tag: "ROOF GARDEN", desc: "70.90 m² de patio privado sin techar para asador y convivencia.", x: 30, y: 75 },
-      { name: "Gran Estancia", tag: "ÁREA SOCIAL", desc: "Estancia de gran altura con ventanales corredizos continuos.", x: 54, y: 60 },
-      { name: "Cocina de diseñador", tag: "COCINA PREMIUM", desc: "Cocina gourmet con isla y cubiertas en granito importado.", x: 58, y: 14 },
-      { name: "Master Suite Penthouse", tag: "LUXURY SUITE", desc: "Master suite privada con tina, vestidor y balcón.", x: 31, y: 45 },
-      { name: "Junior Suites", tag: "SUITES PRIVADAS", desc: "Suites secundarias completas con baño propio.", x: 35, y: 30 },
+      { name: "Terraza monumental", tag: "TERRAZA PRIVADA", desc: "82 m² de terraza techada con vistas panorámicas a toda la cañada.", x: 44, y: 72 },
+      { name: "Patio en azotea", tag: "ROOF GARDEN", desc: "70.90 m² de patio privado sin techar para asador y convivencia.", x: 32, y: 72 },
+      { name: "Gran Estancia", tag: "ÁREA SOCIAL", desc: "Estancia de gran altura con ventanales corredizos continuos.", x: 42, y: 55 },
+      { name: "Cocina de diseñador", tag: "COCINA PREMIUM", desc: "Cocina gourmet con isla y cubiertas en granito importado.", x: 50, y: 22 },
+      { name: "Master Suite Penthouse", tag: "LUXURY SUITE", desc: "Master suite privada con tina, vestidor y balcón.", x: 30, y: 42 },
+      { name: "Junior Suites", tag: "SUITES PRIVADAS", desc: "Suites secundarias completas con baño propio.", x: 30, y: 26 },
     ],
     acabados: [
       "384.84 m² totales en doble nivel",
@@ -156,24 +156,24 @@ export default function Espacios() {
 
   return (
     <section id="espacios" className="relative bg-cream pt-16 md:pt-24 pb-16 overflow-hidden">
-      {/* Background Sand-Gold Bar extending seamlessly for right side */}
-      <div className="absolute right-0 bottom-0 top-[110px] sm:top-[130px] lg:top-[140px] w-full lg:w-[58%] bg-[#ddcc98] z-0" />
+      {/* Background Sand-Gold Bar extending seamlessly for right side below header */}
+      <div className="absolute right-0 bottom-0 top-[230px] sm:top-[240px] lg:top-[250px] w-full lg:w-[58%] bg-[#ddcc98] z-0" />
 
       <div className="max-w-[1600px] mx-auto px-6 lg:pl-12 lg:pr-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#5c4a2c]">
               Prototipos y Distribución
             </span>
-            <h2 className="font-sans font-light text-3xl md:text-4xl lg:text-[2.6rem] text-[#5c4a2c] leading-tight mt-1">
+            <h2 className="font-serif font-light text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] text-[#5c4a2c] leading-tight mt-1">
               Departamentos y Penthouses
             </h2>
           </div>
 
           <Link
             href="/espacios"
-            className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[#153223] hover:text-[#7d6731] transition-colors pb-1 border-b border-[#153223]"
+            className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[#153223] hover:text-[#7d6731] transition-colors pb-1 border-b border-[#153223] w-fit"
           >
             Ver catálogo completo de espacios
             <ArrowRight className="h-4 w-4" />
@@ -278,37 +278,40 @@ export default function Espacios() {
           <div className="lg:col-span-7 flex flex-col w-full relative pt-2 lg:pt-4">
             {/* Model Selector Tabs */}
             <div className="flex flex-wrap justify-start lg:justify-end items-center gap-2 mb-4 w-full pr-0 lg:pr-12">
-              {(Object.keys(modelData) as ModelKeys[]).map((model) => (
-                <button
-                  key={model}
-                  type="button"
-                  onClick={() => {
-                    setSelectedModel(model);
-                    setActiveFeatureName("");
-                  }}
-                  className={`flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-sans tracking-wide transition-all duration-200 cursor-pointer ${
-                    selectedModel === model
-                      ? "bg-white border border-[#5c4a2c]/20 text-[#5c4a2c] font-medium shadow-sm rounded-t-sm -translate-y-0.5"
-                      : "text-[#5c4a2c]/75 hover:text-[#5c4a2c] hover:bg-white/60 font-light hover:-translate-y-0.5"
-                  }`}
-                >
-                  {selectedModel === model && (
-                    <span className="w-2 h-2 rounded-full bg-[#1b3c2d] shrink-0" />
-                  )}
-                  {model}
-                </button>
-              ))}
+              {Object.keys(modelData).map((modelName) => {
+                const isSelected = selectedModel === modelName;
+                return (
+                  <button
+                    key={modelName}
+                    type="button"
+                    onClick={() => {
+                      setSelectedModel(modelName as ModelKeys);
+                      setActiveFeatureName("");
+                    }}
+                    className={`px-3.5 py-2 font-sans text-xs sm:text-sm font-medium transition-all duration-200 ${
+                      isSelected
+                        ? "bg-white text-[#153223] shadow-md border-b-2 border-[#153223] font-semibold"
+                        : "bg-white/40 text-[#5c4a2c] hover:bg-white/70 hover:text-[#153223]"
+                    }`}
+                  >
+                    {isSelected && (
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#153223] mr-1.5 align-middle" />
+                    )}
+                    {modelName}
+                  </button>
+                );
+              })}
             </div>
 
             {/* Floor Plan Image Container with Pins and Popover Tooltip */}
-            <div className="relative w-full h-[450px] sm:h-[520px] md:h-[600px] lg:h-[680px] p-4 sm:p-6 md:p-8 flex items-center justify-center bg-white/40 border border-[#5c4a2c]/15">
-              <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full flex items-center justify-center bg-white/50 border border-[#5c4a2c]/15 p-3 sm:p-6">
+              <div className="relative w-full max-w-[540px] aspect-[2550/3300] mx-auto flex items-center justify-center">
                 <Image
                   key={selectedModel}
                   src={current.img}
                   alt={`Planta de distribución - ${selectedModel}`}
                   fill
-                  className="object-contain object-center transition-opacity duration-300 p-2"
+                  className="object-contain object-center transition-opacity duration-300"
                   priority
                 />
 
@@ -351,19 +354,21 @@ export default function Espacios() {
                 {activeFeature && (
                   <div
                     style={{
-                      left: `${Math.min(Math.max(activeFeature.x - 15, 5), 55)}%`,
-                      top: `${Math.min(Math.max(activeFeature.y - 12, 10), 65)}%`,
+                      left: `${Math.min(Math.max(activeFeature.x - 20, 2), 35)}%`,
+                      top: `${Math.min(Math.max(activeFeature.y - 10, 2), 50)}%`,
                     }}
-                    className="absolute z-30 w-72 sm:w-80 bg-[#1b2620]/95 backdrop-blur-md text-white border border-[#d4c491]/30 p-5 rounded-none shadow-2xl transition-all duration-300 animate-fade-in pointer-events-auto origin-top-left"
+                    className="absolute z-40 w-64 sm:w-72 max-w-[85%] bg-[#1b2620]/95 backdrop-blur-md text-white border border-[#d4c491]/40 p-4 sm:p-5 rounded-sm shadow-2xl transition-all duration-300 animate-fade-in pointer-events-auto origin-top-left"
                   >
-                    <div className="flex items-center justify-between mb-1">
-                      <h4 className="font-sans text-base font-semibold tracking-wide text-white">
+                    <div className="flex items-start justify-between gap-2 mb-1.5">
+                      <h4 className="font-sans text-sm sm:text-base font-semibold tracking-wide text-white leading-snug">
                         {activeFeature.name}
                       </h4>
                       <button
                         type="button"
                         onClick={() => setActiveFeatureName("")}
-                        className="text-white/50 hover:text-white text-xs px-1"
+                        className="shrink-0 w-7 h-7 -mr-1 -mt-1 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 text-white text-xs font-bold transition-colors focus:outline-none focus:ring-1 focus:ring-[#d4c491]"
+                        title="Cerrar"
+                        aria-label="Cerrar detalles"
                       >
                         ✕
                       </button>

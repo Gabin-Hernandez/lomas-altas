@@ -146,26 +146,27 @@ export default function Ubicacion() {
         </div>
       </div>
 
-      {/* Puntos Cercanos - Uses sec_log.jpg directly as background (already green pre-rendered) */}
-      <div className="relative py-20 px-6 mt-16 overflow-hidden">
-        {/* Background Image: sec_log.jpg */}
-        <div className="absolute inset-0 z-0">
+      {/* Puntos Cercanos - Uses sec_log.jpg with green mobile backdrop for legibility */}
+      <div className="relative py-14 sm:py-20 px-4 sm:px-6 mt-12 sm:mt-16 overflow-hidden">
+        {/* Background Image: sec_log.jpg with mobile green overlay */}
+        <div className="absolute inset-0 z-0 bg-[#122718]">
           <Image
             src="/images/sec_log.jpg"
             alt="Puntos Cercanos"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center opacity-40 md:opacity-100"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#122718]/70 via-[#122718]/50 to-[#122718]/80 md:opacity-0 pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto">
           
           {/* Header with Left/Right lines */}
           <ScrollReveal variant="fade-up" delay={100}>
-            <div className="flex items-center w-full max-w-4xl mx-auto gap-6 mb-16">
+            <div className="flex items-center w-full max-w-4xl mx-auto gap-3 sm:gap-6 mb-10 sm:mb-16">
               <div className="flex-grow h-px bg-[#d4c491]/30" />
-              <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl text-[#d4c491] text-center whitespace-nowrap tracking-wide">
+              <h3 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#d4c491] text-center whitespace-nowrap tracking-wide">
                 Puntos Cercanos
               </h3>
               <div className="flex-grow h-px bg-[#d4c491]/30" />
@@ -174,20 +175,20 @@ export default function Ubicacion() {
 
           {/* Logos Grid - Flat White Silhouette styling */}
           <ScrollReveal variant="fade-up" delay={150}>
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-10 sm:gap-12">
             
             {/* Row 1 (4 logos) */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 sm:gap-8 md:gap-12 items-center justify-items-center">
               
               {/* Logo 1: Colegio Alemán */}
-              <div className="flex flex-col items-center text-center gap-3 group">
-                <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="flex flex-col items-center text-center gap-2.5 sm:gap-3 group">
+                <div className="w-18 h-18 sm:w-24 sm:h-24 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
                     src="/images/logo1.svg"
                     alt="Colegio Alemán"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain opacity-85 group-hover:opacity-100 transition-opacity"
+                    width={90}
+                    height={90}
+                    className="w-full h-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300 filter brightness-[1.3] contrast-[1.1] drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
                   />
                 </div>
                 <span className="text-[#d4c491] text-xs md:text-sm font-serif tracking-wide">
@@ -196,14 +197,14 @@ export default function Ubicacion() {
               </div>
 
               {/* Logo 2: La Cúspide Sky Mall */}
-              <div className="flex flex-col items-center text-center gap-3 group">
-                <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="flex flex-col items-center text-center gap-2.5 sm:gap-3 group">
+                <div className="w-18 h-18 sm:w-24 sm:h-24 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
                     src="/images/logo2.svg"
                     alt="La Cúspide Sky Mall"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition-opacity"
+                    width={90}
+                    height={90}
+                    className="w-full h-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300 filter brightness-[1.3] contrast-[1.1] drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
                   />
                 </div>
                 <span className="text-[#d4c491] text-xs md:text-sm font-serif tracking-wide">
@@ -212,14 +213,14 @@ export default function Ubicacion() {
               </div>
 
               {/* Logo 3: Colegio Carol Baur */}
-              <div className="flex flex-col items-center text-center gap-3 group">
-                <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="flex flex-col items-center text-center gap-2.5 sm:gap-3 group">
+                <div className="w-18 h-18 sm:w-24 sm:h-24 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
                     src="/images/logo5.svg"
                     alt="Colegio Carol Baur"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition-opacity"
+                    width={90}
+                    height={90}
+                    className="w-full h-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300 filter brightness-[1.3] contrast-[1.1] drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
                   />
                 </div>
                 <span className="text-[#d4c491] text-xs md:text-sm font-serif tracking-wide">
@@ -228,14 +229,14 @@ export default function Ubicacion() {
               </div>
 
               {/* Logo 4: UVM Lomas */}
-              <div className="flex flex-col items-center text-center gap-3 group">
-                <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="flex flex-col items-center text-center gap-2.5 sm:gap-3 group">
+                <div className="w-18 h-18 sm:w-24 sm:h-24 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
                     src="/images/logo_uvm.png"
                     alt="UVM Lomas"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain opacity-85 group-hover:opacity-100 transition-opacity"
+                    width={90}
+                    height={90}
+                    className="w-full h-full object-contain opacity-45 group-hover:opacity-100 transition-all duration-300 filter brightness-[0.72] drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
                   />
                 </div>
                 <span className="text-[#d4c491] text-xs md:text-sm font-serif tracking-wide">
@@ -246,17 +247,17 @@ export default function Ubicacion() {
             </div>
 
             {/* Row 2 (3 logos) */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center max-w-4xl mx-auto w-full">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-4 sm:gap-8 md:gap-12 items-center justify-items-center max-w-4xl mx-auto w-full">
               
               {/* Logo 5: Plaza Satélite */}
-              <div className="flex flex-col items-center text-center gap-3 group">
-                <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="flex flex-col items-center text-center gap-2.5 sm:gap-3 group">
+                <div className="w-18 h-18 sm:w-24 sm:h-24 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
                     src="/images/logo3.svg"
                     alt="Plaza Satélite"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition-opacity"
+                    width={90}
+                    height={90}
+                    className="w-full h-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300 filter brightness-[1.3] contrast-[1.1] drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
                   />
                 </div>
                 <span className="text-[#d4c491] text-xs md:text-sm font-serif tracking-wide">
@@ -265,14 +266,14 @@ export default function Ubicacion() {
               </div>
 
               {/* Logo 6: Bellavista Country */}
-              <div className="flex flex-col items-center text-center gap-3 group">
-                <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="flex flex-col items-center text-center gap-2.5 sm:gap-3 group">
+                <div className="w-18 h-18 sm:w-24 sm:h-24 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
                     src="/images/logo4.svg"
                     alt="Bellavista Country"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain filter brightness-0 invert opacity-75 group-hover:opacity-100 transition-opacity"
+                    width={90}
+                    height={90}
+                    className="w-full h-full object-contain opacity-95 group-hover:opacity-100 transition-all duration-300 filter brightness-[1.3] contrast-[1.1] drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
                   />
                 </div>
                 <span className="text-[#d4c491] text-xs md:text-sm font-serif tracking-wide">
@@ -281,14 +282,14 @@ export default function Ubicacion() {
               </div>
 
               {/* Logo 7: Chamapa-Lechería */}
-              <div className="col-span-2 md:col-span-1 flex flex-col items-center text-center gap-3 group">
-                <div className="w-20 h-20 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <div className="col-span-2 md:col-span-1 flex flex-col items-center text-center gap-2.5 sm:gap-3 group">
+                <div className="w-18 h-18 sm:w-24 sm:h-24 relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                   <Image
                     src="/images/logo_chamapa.png"
                     alt="Chamapa-Lechería"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain opacity-85 group-hover:opacity-100 transition-opacity"
+                    width={90}
+                    height={90}
+                    className="w-full h-full object-contain opacity-45 group-hover:opacity-100 transition-all duration-300 filter brightness-[0.72] drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
                   />
                 </div>
                 <span className="text-[#d4c491] text-xs md:text-sm font-serif tracking-wide">

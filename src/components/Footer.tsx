@@ -3,24 +3,26 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#153223] text-white py-16 overflow-hidden">
+    <footer className="relative bg-[#153223] text-white py-14 sm:py-16 overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         
         {/* Main 3-Column Content Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 items-start mb-12">
           
           {/* Column 1: Logo & Description */}
-          <div className="flex flex-col items-start text-left">
-            <Link href="/">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <Link href="/" className="inline-block">
               <Image
-                src="/images/loma-logo.jpeg"
+                src="/images/loma-logo-clean.png"
                 alt="Lomas Altas"
-                width={220}
-                height={50}
-                className="h-12 w-auto mb-6 object-contain cursor-pointer"
+                width={280}
+                height={75}
+                unoptimized
+                quality={100}
+                className="h-12 sm:h-14 md:h-12 w-auto mb-6 object-contain cursor-pointer mx-auto md:mx-0"
               />
             </Link>
-            <p className="text-white text-xs md:text-sm font-light leading-relaxed max-w-xs">
+            <p className="text-white text-xs md:text-sm font-light leading-relaxed max-w-xs mx-auto md:mx-0">
               Un desarrollo residencial boutique dentro de Terralago, diseñado para
               vivir con amplitud, privacidad y conexión natural en una de las zonas con
               mayor valor de Lomas Verdes.
@@ -28,15 +30,15 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Contact Details */}
-          <div className="flex flex-col items-start text-left">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <span className="text-[#bab082] text-xs sm:text-sm tracking-[0.2em] font-serif font-normal block mb-6">
               Contacto
             </span>
             
-            <div className="flex flex-col gap-5 text-white text-xs md:text-sm font-light">
+            <div className="flex flex-col gap-5 text-white text-xs md:text-sm font-light items-center md:items-start">
               
               {/* Address */}
-              <div className="flex gap-4 items-start">
+              <div className="flex gap-3 items-start justify-center md:justify-start">
                 <svg
                   className="w-4 h-4 text-[#bab082] shrink-0 mt-0.5"
                   fill="none"
@@ -55,13 +57,13 @@ export default function Footer() {
                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
                   />
                 </svg>
-                <span className="leading-relaxed">
+                <span className="leading-relaxed max-w-xs">
                   Avenida Lomas Verdes, P.º de Lomas Verdes, 53125 Naucalpan de Juárez, Estado de México.
                 </span>
               </div>
 
               {/* Phone */}
-              <div className="flex gap-4 items-center">
+              <div className="flex gap-3 items-center justify-center md:justify-start">
                 <svg
                   className="w-4 h-4 text-[#bab082] shrink-0"
                   fill="none"
@@ -81,7 +83,7 @@ export default function Footer() {
               </div>
 
               {/* Email */}
-              <div className="flex gap-4 items-center">
+              <div className="flex gap-3 items-center justify-center md:justify-start">
                 <svg
                   className="w-4 h-4 text-[#bab082] shrink-0"
                   fill="none"
@@ -107,11 +109,11 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Links Explorar */}
-          <div className="flex flex-col items-start text-left">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <span className="text-[#bab082] text-xs sm:text-sm tracking-[0.2em] font-serif font-normal block mb-6">
               Explorar
             </span>
-            <ul className="grid grid-cols-1 gap-3 text-white text-xs md:text-sm font-light">
+            <ul className="flex flex-col gap-3 text-white text-xs md:text-sm font-light items-center md:items-start">
               {[
                 { label: "El desarrollo", href: "/#el-desarrollo" },
                 { label: "Ubicación", href: "/#ubicacion" },
@@ -135,7 +137,7 @@ export default function Footer() {
         <div className="w-full h-px bg-white/15 mb-8" />
 
         {/* Bottom Bar: Rights, Privacy, Developer */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white text-center md:text-left">
           
           {/* Rights reserved */}
           <span className="order-2 md:order-1 font-light">
@@ -154,7 +156,7 @@ export default function Footer() {
           </div>
 
           {/* Developer logo */}
-          <div className="order-3 flex items-center gap-4">
+          <div className="order-3 flex items-center gap-4 justify-center md:justify-start">
             <span className="font-light tracking-[0.1em] uppercase text-[10px]">
               Desarrolla
             </span>
@@ -163,7 +165,8 @@ export default function Footer() {
               alt="Siermend"
               width={110}
               height={24}
-              className="h-6 w-auto opacity-90 hover:opacity-100 transition-opacity"
+              unoptimized
+              className="h-6 w-auto opacity-100"
             />
           </div>
 

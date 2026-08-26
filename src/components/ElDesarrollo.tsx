@@ -143,22 +143,23 @@ export default function ElDesarrollo() {
       <div className="relative w-full bg-cream pt-8 pb-0 overflow-hidden">
 
         {/* Full width container grid */}
-        <div className="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-stretch relative">
+        <div className="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-stretch relative overflow-hidden">
 
-          {/* Left Side: Large Building Render standing tall over #decd99 background */}
-          <div className="lg:col-span-6 relative flex items-end justify-center lg:justify-end px-4 lg:px-0 z-10 min-h-[420px] lg:min-h-[580px]">
+          {/* Left Side: Image covering the entire left column */}
+          <div className="lg:col-span-6 relative min-h-[380px] sm:min-h-[460px] lg:min-h-[550px] w-full overflow-hidden shadow-xl z-10 flex items-stretch">
             {/* Left Sand-Gold Block extending to far-left edge of screen */}
-            <div className="absolute -left-[50vw] right-0 bottom-0 h-[48%] bg-[#decd99] z-0" />
+            <div className="absolute -left-[50vw] right-0 inset-y-0 bg-[#decd99] z-0" />
 
-            {/* Building Image - Shifted right against text box and raised upward */}
-            <div className="relative z-10 w-full max-w-lg lg:max-w-xl -mt-24 sm:-mt-36 lg:-mt-52 lg:-mr-4">
+            <div className="relative z-10 w-full h-full min-h-[380px] sm:min-h-[460px] lg:min-h-[550px] overflow-hidden">
               <Image
-                src="/images/edif1.png"
-                alt="Edificio Lomas Altas"
-                width={800}
-                height={900}
-                className="w-full h-auto object-contain object-bottom drop-shadow-2xl"
+                src="/images/Generales/Terralago Fachada lateral.jpg"
+                alt="Edificio Lomas Altas - Terralago Fachada lateral"
+                fill
+                className="object-cover object-center w-full h-full"
                 priority
+                quality={100}
+                unoptimized
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

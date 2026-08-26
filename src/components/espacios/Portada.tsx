@@ -88,11 +88,12 @@ export default function Portada() {
                 sits at x 33–70% / y 15–67% of the file, so this keeps it centred
                 even in the 21/8 crop. Only priority image of the page. */}
             <Image
-              src="/images/eyecatcher.jpg"
+              src="/images/Amenidades/Terralago Vista aérea.jpg"
               alt="Vista aérea del conjunto Terralago al atardecer, con la torre Lomas Altas al centro"
               fill
               sizes="100vw"
-              quality={80}
+              quality={100}
+              unoptimized
               priority
               className="object-cover object-[52%_42%]"
             />

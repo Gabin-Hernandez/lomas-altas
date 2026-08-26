@@ -106,11 +106,12 @@ export default function Colofon() {
                   booklet. object-[center_58%] centres the tower, not the sky. */}
               <div className="relative aspect-[3/2] overflow-hidden border border-[#5c4a2c]/15">
                 <Image
-                  src="/images/eyecatcher.jpg"
+                  src="/images/Amenidades/Terralago Vista aérea.jpg"
                   alt="Vista del conjunto Terralago con la torre Lomas Altas al centro, desde el poniente"
                   fill
                   sizes="(min-width:1024px) 48vw, 92vw"
-                  quality={80}
+                  quality={100}
+                  unoptimized
                   loading="lazy"
                   className="object-cover object-[center_58%]"
                 />

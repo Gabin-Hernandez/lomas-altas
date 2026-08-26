@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/eyecatcher.jpg",
-        width: 2000,
-        height: 1322,
+        url: "/images/Amenidades/Terralago Vista aérea.jpg",
+        width: 4903,
+        height: 3263,
         alt: "Vista aérea del conjunto Terralago con la torre Lomas Altas al centro",
       },
     ],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Espacios y distribuciones — Lomas Altas",
     description:
       "Cuatro tipologías residenciales desde 188.94 m² hasta 384.84 m², plantas interactivas y renders dedicados.",
-    images: ["/images/eyecatcher.jpg"],
+    images: ["/images/Amenidades/Terralago Vista aérea.jpg"],
   },
 };
 

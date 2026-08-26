@@ -58,11 +58,13 @@ export default function CierreContacto() {
             reads as continuing past the frame. Transparent PNG: no scrim, no shadow. */}
         <div className="relative h-40 lg:col-span-4 lg:h-full">
           <Image
-            src="/images/edif1.png"
+            src="/images/Generales/Terralago Fachada lateral.jpg"
             alt=""
             aria-hidden
             width={669}
             height={703}
+            quality={100}
+            unoptimized
             loading="lazy"
             sizes="(max-width: 1024px) 150px, 300px"
             className="absolute -top-12 right-2 h-auto w-[150px] object-contain opacity-70 lg:-top-28 lg:right-8 lg:w-[300px] lg:opacity-100"

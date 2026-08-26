@@ -5,15 +5,15 @@ import { useState } from "react";
 
 const images = [
   {
-    src: "/images/eyecatcher.jpg",
+    src: "/images/Amenidades/Terralago Vista aérea.jpg",
     alt: "Vista aérea de Lomas Altas",
   },
   {
-    src: "/images/edif1.png",
-    alt: "Fachada del edificio Lomas Altas",
+    src: "/images/Generales/Terralago Fachada lateral.jpg",
+    alt: "Fachada lateral del edificio Lomas Altas",
   },
   {
-    src: "/images/posfooter.png",
+    src: "/images/Generales/Terralago Fachada frontal.jpg",
     alt: "Vista frontal de Lomas Altas",
   },
 ];
@@ -37,6 +37,8 @@ export default function Galeria() {
             src={images[active].src}
             alt={images[active].alt}
             fill
+            quality={100}
+            unoptimized
             className="object-cover transition-all duration-500"
           />
         </div>
@@ -57,6 +59,8 @@ export default function Galeria() {
                 src={img.src}
                 alt={img.alt}
                 fill
+                quality={100}
+                unoptimized
                 className="object-cover"
               />
             </button>

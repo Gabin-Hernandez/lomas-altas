@@ -62,14 +62,7 @@ export default function CuadernoExteriores() {
                 imgClassName="object-contain object-bottom drop-shadow-[0_40px_60px_rgba(0,0,0,0.45)]"
                 sizes="(max-width: 1024px) 90vw, 620px"
                 className="w-full max-w-[620px]"
-              >
-                {/* The bottom 8% of the PNG is opaque asphalt; without this dissolve the
-                    cut-out reads as a botched crop. */}
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0f2419] to-transparent"
-                />
-              </LaminaFigure>
+              />
             </div>
           </div>
         </SafeReveal>

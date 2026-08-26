@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/images/eyecatcher.jpg",
-        width: 2000,
-        height: 1322,
+        url: "/images/Amenidades/Terralago Vista aérea.jpg",
+        width: 4903,
+        height: 3263,
         alt: "Vista aérea del conjunto Lomas Altas dentro de Terralago",
       },
     ],

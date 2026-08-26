@@ -99,13 +99,9 @@ export default function PlantaTipo() {
                     src="/images/render.jpg"
                     alt="Planta tipo de 105 m² en vista isométrica, con terraza, estancia, comedor, cocina, tres recámaras, estudio, baños, cuarto de lavado, cuarto de servicio y balcón posterior"
                     fill
-                    // Measured against the real box, not guessed. From lg the
-                    // plan is col-span-8 of the 1440 grid, i.e. 866px at 1440 =
-                    // 60vw — the old 46vw made the browser pick a 750px file for
-                    // an 866px box and the drawing came out soft. Between 640 and
-                    // 1024 the max-w-[560px] cap, not the viewport, sets the size.
+                    quality={100}
+                    unoptimized
                     sizes="(min-width:1024px) 61vw, (min-width:640px) 560px, 92vw"
-                    quality={90}
                     loading="lazy"
                     className="object-contain"
                   />

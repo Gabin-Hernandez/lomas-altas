@@ -82,6 +82,8 @@ export default function PliegoInterior() {
                 src="/images/3.png"
                 alt={figuras[0].alt}
                 fill
+                quality={100}
+                unoptimized
                 sizes="100vw"
                 loading="lazy"
                 className="object-cover object-center"
@@ -125,6 +127,8 @@ export default function PliegoInterior() {
                     src="/images/10.png"
                     alt={figuras[1].alt}
                     fill
+                    quality={100}
+                    unoptimized
                     sizes="(min-width:768px) 40vw, 92vw"
                     loading="lazy"
                     className="object-cover object-center"
@@ -157,6 +161,8 @@ export default function PliegoInterior() {
                     src="/images/9.png"
                     alt={figuras[2].alt}
                     fill
+                    quality={100}
+                    unoptimized
                     sizes="(min-width:768px) 32vw, 92vw"
                     loading="lazy"
                     className="object-cover object-center"
@@ -201,6 +207,8 @@ export default function PliegoInterior() {
                     src="/images/7.png"
                     alt={figuras[3].alt}
                     fill
+                    quality={100}
+                    unoptimized
                     sizes="(min-width:768px) 62vw, 92vw"
                     loading="lazy"
                     className="object-cover object-center"
@@ -220,13 +228,13 @@ export default function PliegoInterior() {
         <div className={`${GRID} mt-16`}>
           <SafeReveal
             variant="fade-up"
-            className="col-span-4 pb-20 md:col-span-6 md:col-start-7 md:pb-0"
+            className="col-span-4 pb-20 md:col-span-7 md:col-start-6 md:pb-0"
           >
             <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-[#7d6731]">
               Amenidad
             </p>
             <figure>
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-[16/9] overflow-hidden">
                 <button
                   type="button"
                   onClick={() => setLightbox(4)}
@@ -237,7 +245,9 @@ export default function PliegoInterior() {
                     src="/images/Amenidades/Terralago Gym.jpg"
                     alt={figuras[4].alt}
                     fill
-                    sizes="(min-width:768px) 48vw, 92vw"
+                    quality={100}
+                    unoptimized
+                    sizes="(min-width:768px) 58vw, 92vw"
                     loading="lazy"
                     className="object-cover object-center"
                   />

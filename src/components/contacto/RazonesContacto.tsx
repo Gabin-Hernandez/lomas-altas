@@ -43,10 +43,12 @@ export default function RazonesContacto() {
       <div className="relative min-h-[360px] lg:col-span-5 lg:min-h-[640px]">
         <SafeReveal variant="fade-in" delay={100} className="absolute inset-0">
           <Image
-            src="/images/lomas5.jpeg"
+            src="/images/9.png"
             alt="Baño principal con doble lavabo, mármol travertino y ducha a ras de piso"
             fill
             loading="lazy"
+            quality={100}
+            unoptimized
             sizes="(max-width: 1024px) 100vw, 40vw"
             className="object-cover object-center"
           />

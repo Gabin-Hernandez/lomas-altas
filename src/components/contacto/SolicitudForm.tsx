@@ -553,24 +553,7 @@ export default function SolicitudForm() {
             ¿Prefieres hablar? Marca al {CONTACTO.telFmt}
           </a>
 
-          <div className="relative mt-10 hidden aspect-square overflow-hidden border border-forest/12 xl:block">
-            <Image
-              src="/images/lomas3.jpeg"
-              alt="Cocina integral del departamento muestra, con acabados de entrega"
-              fill
-              loading="lazy"
-              sizes="320px"
-              className="object-cover object-center"
-            />
-            <div
-              aria-hidden
-              className="absolute left-0 top-0 h-16 w-16 bg-[#decd99]"
-              style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
-            />
-          </div>
-          <p className="mt-3 hidden font-sans text-[10px] uppercase tracking-[0.2em] text-[#5c4a2c]/80 xl:block">
-            Cocina integral, acabados de entrega.
-          </p>
+
         </aside>
 
         {/* Form panel over the offset sand plane */}
@@ -882,6 +865,66 @@ export default function SolicitudForm() {
             </form>
           )}
         </div>
+      </div>
+
+      {/* Editorial showcase banner for the sample unit finishes */}
+      <div className="mx-auto mt-16 max-w-[1400px] px-6 sm:mt-20 lg:mt-24 lg:px-12">
+        <SafeReveal variant="fade-up" delay={150}>
+          <div className="relative overflow-hidden border border-forest/15 bg-white/80 p-6 sm:p-10 lg:p-12 shadow-sm">
+            <span
+              aria-hidden
+              className="absolute left-0 top-0 h-16 w-16 bg-[#decd99]"
+              style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
+            />
+            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-forest/12 shadow-md lg:col-span-7">
+                <Image
+                  src="/images/tipologias/ta/cocina.jpeg"
+                  alt="Cocina integral del departamento muestra en Lomas Altas, con acabados y equipamiento de entrega"
+                  fill
+                  loading="lazy"
+                  quality={100}
+                  unoptimized
+                  sizes="(max-width: 1024px) 100vw, 750px"
+                  className="object-cover object-center"
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-3 sm:inset-4 border border-white/30"
+                />
+              </div>
+
+              <div className="flex flex-col justify-center lg:col-span-5">
+                <div className="flex items-center gap-3">
+                  <span aria-hidden className="h-px w-8 bg-gold" />
+                  <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.24em] text-[#5c4a2c]">
+                    Departamento Muestra
+                  </p>
+                </div>
+
+                <h3 className="mt-4 font-sans text-2xl font-light text-forest sm:text-3xl">
+                  Conoce los acabados reales{" "}
+                  <span className="font-serif italic text-forest">en tu recorrido.</span>
+                </h3>
+
+                <p className="mt-4 font-sans text-xs font-light leading-relaxed text-[#5c4a2c] sm:text-sm">
+                  Cada departamento se entrega totalmente equipado: cocina integral con cubiertas
+                  resistentes, carpintería al tono y equipos instalados. Ven a comprobar la calidad
+                  constructiva y las vistas antes de decidir.
+                </p>
+
+                <div className="mt-6">
+                  <a
+                    href="#como-llegar"
+                    className="inline-flex items-center gap-2 border-b border-forest/40 pb-1 font-sans text-xs font-medium uppercase tracking-[0.2em] text-forest transition-colors duration-300 hover:border-forest hover:text-gold-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-forest"
+                  >
+                    Ver sala de ventas y cómo llegar →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SafeReveal>
       </div>
     </section>
   );

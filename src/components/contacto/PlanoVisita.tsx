@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SafeReveal from "@/components/ui/SafeReveal";
 import MapaSalaDeVentas from "@/components/contacto/MapaSalaDeVentas";
 import { CONTACTO } from "@/lib/contacto";
@@ -84,25 +83,6 @@ export default function PlanoVisita() {
             Abrir en Google Maps
             <span className="sr-only"> (se abre en una pestaña nueva)</span>
           </a>
-        </SafeReveal>
-
-        <SafeReveal variant="fade-up" delay={200}>
-          <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden border border-[#4a3e26]/20">
-            <Image
-              src="/images/sec_log.jpg"
-              alt="Lobby y sala de ventas de Lomas Altas en planta baja"
-              fill
-              loading="lazy"
-              sizes="(max-width: 1024px) 100vw, 420px"
-              className="object-cover object-[50%_45%]"
-            />
-          </div>
-          <p className="mt-3 font-sans text-[10px] uppercase tracking-[0.2em] text-[#4a3e26]/85">
-            Fig. 03 — Lobby y sala de ventas, planta baja.
-          </p>
-          <p className="mt-2 font-sans text-[10px] uppercase tracking-[0.2em] text-[#4a3e26]/85">
-            19.517566, −99.267787
-          </p>
         </SafeReveal>
       </div>
     </section>

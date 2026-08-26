@@ -52,6 +52,22 @@ export default function Tipologias() {
   const [colActiva, setColActiva] = useState<string | null>(null);
   const [fichaActiva, setFichaActiva] = useState(0);
   const carruselRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 40) {
+      setFichaActiva((prev) => (prev + 1) % TIPOLOGIAS.length);
+    } else if (diff < -40) {
+      setFichaActiva((prev) => (prev - 1 + TIPOLOGIAS.length) % TIPOLOGIAS.length);
+    }
+    touchStartX.current = null;
+  };
 
   useEffect(() => {
     const scroller = carruselRef.current;
@@ -206,81 +222,136 @@ export default function Tipologias() {
               </tbody>
             </table>
 
-            {/* Mobile: cards on a snap rail */}
+            {/* Mobile: Interactive Tabbed Card with Swipe */}
             <div className="md:hidden">
-              <div
-                ref={carruselRef}
-                className="no-scrollbar -mx-6 -my-1 flex snap-x snap-mandatory gap-0 overflow-x-auto px-6 py-1"
-              >
-                {TIPOLOGIAS.map((t, i) => (
-                  <article
-                    key={t.id}
-                    data-ficha={i}
-                    className="min-w-[80vw] shrink-0 snap-start border-l border-[#5c4a2c]/15 px-5 first:border-l-0 first:pl-0 sm:min-w-[48vw]"
-                  >
-                    <span
-                      aria-hidden
-                      className="mb-4 block h-[3px] w-10"
-                      style={{ background: t.chip }}
-                    />
-                    <span
-                      className={`block font-serif font-light leading-[0.8] text-[#153223] ${
-                        t.letra.length > 3 ? "text-[2.2rem]" : "text-[2.75rem]"
+              {/* Tab Selector Buttons */}
+              <div className="no-scrollbar flex gap-1.5 overflow-x-auto pb-3 mb-4">
+                {TIPOLOGIAS.map((t, i) => {
+                  const esActiva = i === fichaActiva;
+                  return (
+                    <button
+                      key={t.id}
+                      type="button"
+                      onClick={() => setFichaActiva(i)}
+                      className={`flex shrink-0 items-center gap-2 rounded-xs px-3.5 py-2 font-sans text-xs font-medium transition-all ${
+                        esActiva
+                          ? "bg-[#153223] text-[#decd98] shadow-sm font-semibold"
+                          : "bg-white/70 text-[#5c4a2c] hover:bg-white border border-[#5c4a2c]/10"
                       }`}
                     >
-                      {t.letra}
-                    </span>
-                    <h3 className="mt-3 font-sans text-base font-light tracking-[0.01em] text-[#153223]">
-                      {t.nombre}
-                    </h3>
-                    <span className="block font-sans text-[11px] uppercase tracking-widest text-[#7d6731]">
-                      {t.codigo}
-                    </span>
+                      <span
+                        className="h-2 w-2 rounded-full shrink-0"
+                        style={{ background: t.chip }}
+                      />
+                      <span>{t.letra}</span>
+                    </button>
+                  );
+                })}
+              </div>
 
-                    <dl className="mt-5">
-                      {FILAS.map((fila) => (
-                        <div
-                          key={fila.campo}
-                          className="flex items-baseline justify-between gap-4 border-b border-[#5c4a2c]/10 py-2"
-                        >
-                          <dt className="font-sans text-[9px] font-semibold uppercase tracking-[0.2em] text-[#5c4a2c]/80">
-                            {fila.etiqueta}
-                          </dt>
-                          <dd className="text-right">{valorCelda(t, fila.campo, fila.serif)}</dd>
-                        </div>
-                      ))}
-                    </dl>
+              {/* Active Tipología Card */}
+              {(() => {
+                const t = TIPOLOGIAS[fichaActiva];
+                return (
+                  <article
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                    className="relative w-full rounded-sm border border-[#5c4a2c]/20 bg-white/80 p-5 shadow-md transition-all duration-300"
+                  >
+                    {/* Header */}
+                    <div className="flex items-start justify-between gap-3 border-b border-[#5c4a2c]/15 pb-4">
+                      <div>
+                        <span
+                          aria-hidden
+                          className="mb-2 block h-[3px] w-10 rounded-full"
+                          style={{ background: t.chip }}
+                        />
+                        <h3 className="font-serif text-2xl font-normal text-[#153223]">
+                          {t.nombre}
+                        </h3>
+                        <span className="mt-0.5 block font-sans text-[11px] uppercase tracking-widest text-[#7d6731]">
+                          {t.codigo} • {t.unidades} UNIDADES
+                        </span>
+                      </div>
+                      <div className="shrink-0 text-right">
+                        <span className="block font-serif text-lg font-medium text-[#153223]">
+                          {t.superficie}
+                        </span>
+                        <span className="block font-sans text-[9px] uppercase tracking-wider text-[#5c4a2c]/70">
+                          Totales
+                        </span>
+                      </div>
+                    </div>
 
-                    <p className="mt-5 text-[13px] font-light leading-[1.75] text-[#5c4a2c]/85">
+                    {/* Metric Grid (2 Columns) */}
+                    <div className="my-4 grid grid-cols-2 gap-2">
+                      <div className="border border-[#5c4a2c]/10 bg-cream/50 p-2.5">
+                        <span className="block font-sans text-[9px] font-semibold uppercase tracking-wider text-[#5c4a2c]/75">
+                          Área Interior
+                        </span>
+                        <span className="font-serif text-base text-[#153223]">
+                          {t.superficieInterior}
+                        </span>
+                      </div>
+                      <div className="border border-[#5c4a2c]/10 bg-cream/50 p-2.5">
+                        <span className="block font-sans text-[9px] font-semibold uppercase tracking-wider text-[#5c4a2c]/75">
+                          Niveles
+                        </span>
+                        <span className="font-sans text-xs font-medium text-[#153223]">
+                          {t.niveles}
+                        </span>
+                      </div>
+                      <div className="col-span-2 border border-[#5c4a2c]/10 bg-cream/50 p-2.5">
+                        <span className="block font-sans text-[9px] font-semibold uppercase tracking-wider text-[#5c4a2c]/75">
+                          Exterior
+                        </span>
+                        <span className="font-sans text-xs font-medium text-[#153223]">
+                          {t.exterior}
+                        </span>
+                      </div>
+                      <div className="col-span-2 border border-[#5c4a2c]/10 bg-cream/50 p-2.5">
+                        <span className="block font-sans text-[9px] font-semibold uppercase tracking-wider text-[#5c4a2c]/75">
+                          Estacionamiento
+                        </span>
+                        <span className="font-sans text-xs font-medium text-[#153223]">
+                          {t.estacionamiento}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Paragraph */}
+                    <p className="mb-5 font-sans text-xs font-light leading-relaxed text-[#5c4a2c]/90">
                       {t.parrafo}
                     </p>
 
+                    {/* Action Button */}
                     <Link
                       href={`/espacios/${t.slug}`}
-                      className={`mt-6 inline-flex items-center gap-2 ${ENLACE_PROTOTIPO} ${ANILLO}`}
+                      className="inline-flex w-full items-center justify-center gap-2 bg-[#153223] px-5 py-3 font-sans text-xs font-semibold uppercase tracking-[0.18em] text-[#decd98] transition-all hover:bg-forest hover:text-white shadow-sm"
                     >
-                      Ver renders y ficha
-                      <ArrowRight className="h-3 w-3" />
+                      Ver renders y ficha completa
+                      <ArrowRight className="h-3.5 w-3.5 text-[#decd98]" />
                     </Link>
-                  </article>
-                ))}
-              </div>
 
-              <div className="mt-7 flex items-center gap-4">
-                <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#5c4a2c]/80">
-                  Desliza para comparar los cuatro
-                </span>
-                <span aria-hidden className="ml-auto flex items-center gap-1.5">
-                  {TIPOLOGIAS.map((t, i) => (
-                    <span
-                      key={t.id}
-                      className={`h-px w-6 transition-colors ${
-                        i === fichaActiva ? "bg-[#153223]" : "bg-[#5c4a2c]/25"
-                      }`}
-                    />
-                  ))}
-                </span>
-              </div>
+                    {/* Swipe & Indicator Footer */}
+                    <div className="mt-4 flex items-center justify-between pt-2 text-[10px] text-[#5c4a2c]/70 border-t border-[#5c4a2c]/10">
+                      <span className="font-sans tracking-wide">
+                        Desliza ← → para cambiar
+                      </span>
+                      <div className="flex items-center gap-1.5">
+                        {TIPOLOGIAS.map((_, i) => (
+                          <span
+                            key={i}
+                            className={`h-1 rounded-full transition-all ${
+                              i === fichaActiva ? "w-5 bg-[#153223]" : "w-1.5 bg-[#5c4a2c]/25"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })()}
             </div>
           </SafeReveal>
 

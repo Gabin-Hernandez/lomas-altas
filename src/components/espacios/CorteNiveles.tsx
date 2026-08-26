@@ -142,13 +142,10 @@ export default function CorteNiveles() {
                   src="/images/estructura.jpg"
                   alt="Corte esquemático del edificio Lomas Altas: penthouses y roof garden en N5 y N6, cuatro departamentos por nivel de N1 a N4, planta baja en N0, tres niveles de estacionamiento de N-1 a N-3 y jardín en N-4."
                   fill
-                  // Under lg the drawing is min-w-[720px] INSIDE a horizontal
-                  // scroller, so it is 720px wide on a 375px phone — not 100vw.
-                  // The old 100vw asked the browser for a 375px-wide file to
-                  // paint a 720px box and the level labels turned to mush.
-                  sizes="(min-width:1024px) 62vw, (min-width:820px) 92vw, 720px"
-                  quality={90}
-                  loading="lazy"
+                  sizes="(min-width:1024px) 100vw, 100vw"
+                  quality={100}
+                  unoptimized
+                  priority
                   className="object-cover object-right"
                 />
                 <div

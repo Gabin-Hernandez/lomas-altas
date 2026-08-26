@@ -154,6 +154,7 @@ export default function Lightbox({ items, index, onClose, onIndexChange }: Light
             alt={item.alt}
             fill
             sizes="(max-width: 1152px) 100vw, 1152px"
+            unoptimized
             className="object-contain animate-fade-in"
             priority
           />

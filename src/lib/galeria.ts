@@ -242,8 +242,8 @@ export const LAMINAS: Lamina[] = [
     id: "12",
     cuaderno: "04",
     src: "/images/estructura.jpg",
-    width: 1658,
-    height: 933,
+    width: 3316,
+    height: 1866,
     titulo: "Corte por niveles",
     epigrafe:
       "Cuatro niveles de departamentos, dos penthouses con roof garden en la coronación, planta baja y tres sótanos de estacionamiento sobre el jardín.",

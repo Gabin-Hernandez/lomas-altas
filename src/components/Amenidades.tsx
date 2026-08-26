@@ -86,12 +86,12 @@ export default function Amenidades() {
         
         {/* Section Header with Left/Right Lines */}
         <ScrollReveal variant="fade-up" delay={100}>
-          <div className="flex items-center w-full max-w-5xl mx-auto gap-6 mb-12 sm:mb-16">
-            <div className="flex-grow h-px bg-[#5c4a2c]/25" />
-            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-[#5c4a2c] text-center whitespace-nowrap">
+          <div className="flex items-center w-full max-w-5xl mx-auto gap-3 sm:gap-6 mb-12 sm:mb-16">
+            <div className="flex-grow h-px bg-[#5c4a2c]/25 min-w-[8px] sm:min-w-[24px]" />
+            <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#5c4a2c] text-center sm:whitespace-nowrap">
               Espacios para disfrutar todos los días
             </h2>
-            <div className="flex-grow h-px bg-[#5c4a2c]/25" />
+            <div className="flex-grow h-px bg-[#5c4a2c]/25 min-w-[8px] sm:min-w-[24px]" />
           </div>
         </ScrollReveal>
 

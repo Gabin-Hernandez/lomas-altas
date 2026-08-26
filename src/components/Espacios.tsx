@@ -98,12 +98,12 @@ const modelData: Record<string, ModelInfo> = {
       total: "188.94 m²",
     },
     features: [
-      { name: "Estancia social", tag: "ÁREA SOCIAL", desc: "Área social fluida conectada con la terraza frontal.", x: 42, y: 56 },
-      { name: "Comedor", tag: "ÁREA FORMAL", desc: "Comedor con capacidad para 6-8 comensales.", x: 52, y: 46 },
-      { name: "Cocina gourmet", tag: "COCINA INTEGRAL", desc: "Cocina de diseño contemporáneo con barra de trabajo.", x: 50, y: 22 },
-      { name: "Recámara principal", tag: "SUITE", desc: "Suite principal con baño privado y clóset vestidor.", x: 30, y: 58 },
-      { name: "Recámaras secundarias", tag: "HABITACIONES", desc: "Recámaras privadas con ventilación natural.", x: 30, y: 36 },
-      { name: "Terraza techada", tag: "EXTERIOR", desc: "35.60 m² de terraza techada.", x: 44, y: 72 },
+      { name: "Estancia social", tag: "ÁREA SOCIAL", desc: "Área social fluida conectada con la terraza frontal.", x: 53, y: 63 },
+      { name: "Comedor", tag: "ÁREA FORMAL", desc: "Comedor con capacidad para 6-8 comensales.", x: 53, y: 49 },
+      { name: "Cocina gourmet", tag: "COCINA INTEGRAL", desc: "Cocina de diseño contemporáneo con barra de trabajo.", x: 35, y: 63 },
+      { name: "Recámara principal", tag: "SUITE", desc: "Suite principal con baño privado y clóset vestidor.", x: 72, y: 65 },
+      { name: "Recámaras secundarias", tag: "HABITACIONES", desc: "Recámaras privadas con ventilación natural.", x: 48, y: 24 },
+      { name: "Terraza techada", tag: "EXTERIOR", desc: "35.60 m² de terraza techada.", x: 44, y: 76 },
     ],
     acabados: [
       "153.34 m² interiores + 35.6 m² terraza",

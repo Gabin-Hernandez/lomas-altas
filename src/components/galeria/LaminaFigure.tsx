@@ -78,6 +78,7 @@ export default function LaminaFigure({
           fill
           sizes={sizes}
           priority={priority}
+          unoptimized
           className={cn(
             "transition-transform duration-[900ms] ease-out motion-reduce:transform-none",
             imgClassName ?? lamina.crop?.imgClass ?? "object-cover",

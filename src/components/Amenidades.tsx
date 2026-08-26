@@ -32,7 +32,7 @@ export default function Amenidades() {
     [
       {
         title: "Gimnasio Equipado",
-        img: "/images/4.png",
+        img: "/images/Amenidades/Terralago Gym.jpg",
         widthClass: "w-full md:w-[55%]",
       },
       {
@@ -55,14 +55,14 @@ export default function Amenidades() {
     ],
     [
       {
-        title: "Comedor Social & Eventos",
-        img: "/images/3.png",
-        widthClass: "w-full md:w-[50%]",
+        title: "Lobby Jardín",
+        img: "/images/Amenidades/Terralago Lobby jardín.jpg",
+        widthClass: "w-full md:w-[48%]",
       },
       {
-        title: "Estacionamiento & Bodegas",
-        img: "/images/5.png",
-        widthClass: "w-full md:w-[50%]",
+        title: "Comedor Social & Eventos",
+        img: "/images/Amenidades/Terralago Salón.jpg",
+        widthClass: "w-full md:w-[52%]",
       },
     ],
     [
@@ -75,6 +75,13 @@ export default function Amenidades() {
         title: "Sala & Terraza Privada",
         img: "/images/7.png",
         widthClass: "w-full md:w-[58%]",
+      },
+    ],
+    [
+      {
+        title: "Estacionamiento & Bodegas",
+        img: "/images/5.png",
+        widthClass: "w-full",
       },
     ],
   ];

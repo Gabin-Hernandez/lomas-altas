@@ -11,8 +11,8 @@ export default function CierreContacto() {
     <section className="relative overflow-hidden bg-[#decd99] text-[#4a3e26]">
       <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-[#4a3e26]/15" />
 
-      <div className="mx-auto grid max-w-[1600px] grid-cols-1 items-end gap-10 px-6 py-16 md:py-24 lg:grid-cols-12 lg:px-16">
-        <div className="lg:col-span-8">
+      <div className="mx-auto grid max-w-[1600px] grid-cols-1 items-center gap-10 px-6 py-16 md:py-24 lg:grid-cols-12 lg:px-16">
+        <div className="lg:col-span-7">
           <SafeReveal variant="fade-up" delay={100}>
             <div className="flex items-center gap-4">
               <span aria-hidden className="h-px w-10 bg-[#4a3e26]/40" />
@@ -54,20 +54,17 @@ export default function CierreContacto() {
           </a>
         </div>
 
-        {/* The section's overflow-hidden crops the tower at the top edge, so it
-            reads as continuing past the frame. Transparent PNG: no scrim, no shadow. */}
-        <div className="relative h-40 lg:col-span-4 lg:h-full">
+        {/* Prominent Building Image Container */}
+        <div className="relative flex items-center justify-center lg:justify-end lg:col-span-5">
           <Image
             src="/images/Generales/Terralago Fachada lateral.jpg"
-            alt=""
-            aria-hidden
-            width={669}
-            height={703}
+            alt="Edificio Lomas Altas"
+            width={800}
+            height={900}
             quality={100}
             unoptimized
             loading="lazy"
-            sizes="(max-width: 1024px) 150px, 300px"
-            className="absolute -top-12 right-2 h-auto w-[150px] object-contain opacity-70 lg:-top-28 lg:right-8 lg:w-[300px] lg:opacity-100"
+            className="w-full max-w-sm sm:max-w-md lg:max-w-lg h-auto object-cover rounded-sm shadow-2xl"
           />
         </div>
       </div>

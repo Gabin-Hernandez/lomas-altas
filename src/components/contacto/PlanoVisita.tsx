@@ -12,7 +12,7 @@ export default function PlanoVisita() {
     >
       {/* bg-cream-dark is the fallback: if basemaps.cartocdn.com fails the layout
           keeps its height and the address block below stays fully functional. */}
-      <div className="relative h-[380px] bg-cream-dark md:h-[520px] lg:col-span-7 lg:h-[640px]">
+      <div className="relative h-full min-h-[380px] bg-cream-dark md:min-h-[520px] lg:col-span-7 lg:min-h-[640px]">
         {/* Deliberately not aria-hidden: MapLibre leaves a tabbable canvas and the
             attribution links inside, and hiding focusable nodes from the a11y tree is
             the classic aria-hidden-focus violation. The written address and the Google
@@ -20,15 +20,6 @@ export default function PlanoVisita() {
         <div className="absolute inset-0">
           <MapaSalaDeVentas />
         </div>
-        {/* z-[4] and z-[5] stay under the z-6 globals.css reserves for the MapLibre attribution. */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 z-[4] bg-forest/40 mix-blend-multiply"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 z-[5] ring-1 ring-inset ring-gold/25"
-        />
       </div>
 
       <div className="relative bg-[#decd99] px-8 py-14 text-[#4a3e26] sm:px-12 lg:col-span-5 lg:px-14 lg:py-20">

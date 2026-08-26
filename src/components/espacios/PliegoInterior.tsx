@@ -234,7 +234,7 @@ export default function PliegoInterior() {
                   className={`absolute inset-0 ${ANILLO_PLACA}`}
                 >
                   <Image
-                    src="/images/4.png"
+                    src="/images/Amenidades/Terralago Gym.jpg"
                     alt={figuras[4].alt}
                     fill
                     sizes="(min-width:768px) 48vw, 92vw"

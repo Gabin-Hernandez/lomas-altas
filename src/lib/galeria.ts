@@ -116,7 +116,7 @@ export const LAMINAS: Lamina[] = [
   {
     id: "05",
     cuaderno: "02",
-    src: "/images/4.png",
+    src: "/images/Amenidades/Terralago Gym.jpg",
     width: 3419,
     height: 2043,
     titulo: "Gimnasio",
@@ -126,7 +126,7 @@ export const LAMINAS: Lamina[] = [
     crop: {
       ratio: "aspect-[16/10]",
       imgClass: "object-cover object-center",
-      nota: "High resolution 4K render 3419x2043.",
+      nota: "High resolution 4K render.",
     },
     miniatura: { fondo: "bg-cream-dark", imgClass: "object-cover object-center" },
     visor: { plate: "dark" },

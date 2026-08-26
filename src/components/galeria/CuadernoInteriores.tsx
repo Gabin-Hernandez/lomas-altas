@@ -43,8 +43,8 @@ export default function CuadernoInteriores() {
           caption={false}
           /* 80/29 = 2.759 in every breakpoint. Anything narrower than 2.71:1 brings back
              the grey and green bands baked into the bottom of the file. */
-          frameClassName="relative w-full aspect-[80/29]"
-          imgClassName="object-cover object-top"
+          frameClassName="relative w-full aspect-[16/7] sm:aspect-[21/9] md:aspect-[24/10]"
+          imgClassName="object-cover object-center"
           sizes="100vw"
           pie={
             <figcaption className={cn("mt-4", CONTENEDOR)}>

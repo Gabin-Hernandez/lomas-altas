@@ -78,66 +78,66 @@ export default function ElDesarrollo() {
       <div className="relative z-10 bg-cream pt-20 pb-16 px-6">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal variant="fade-up" delay={150}>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8">
-            {/* Stat 1 */}
-            <div className="flex flex-col items-center text-center relative">
-              <span className="font-serif text-5xl md:text-5xl lg:text-[4.2rem] text-[#5c4a2c] font-light">
-                16
-              </span>
-              <span className="font-sans text-[#5c4a2c] text-md md:text-sm mt-1 tracking-wide font-light">
-                Departamentos
-              </span>
-              <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-[#5c4a2c]/25" />
-            </div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8">
+              {/* Stat 1 */}
+              <div className="flex flex-col items-center text-center relative">
+                <span className="font-serif text-5xl md:text-5xl lg:text-[4.2rem] text-[#5c4a2c] font-light">
+                  14
+                </span>
+                <span className="font-sans text-[#5c4a2c] text-md md:text-sm mt-1 tracking-wide font-light">
+                  Departamentos
+                </span>
+                <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-[#5c4a2c]/25" />
+              </div>
 
-            {/* Stat 2 */}
-            <div className="flex flex-col items-center text-center relative">
-              <span className="font-serif text-5xl md:text-5xl lg:text-[4.2rem] text-[#5c4a2c] font-light">
-                2
-              </span>
-              <span className="font-sans text-[#5c4a2c] text-md md:text-sm mt-1 tracking-wide font-light">
-                Penthouses
-              </span>
-              <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-[#5c4a2c]/25" />
-            </div>
+              {/* Stat 2 */}
+              <div className="flex flex-col items-center text-center relative">
+                <span className="font-serif text-5xl md:text-5xl lg:text-[4.2rem] text-[#5c4a2c] font-light">
+                  2
+                </span>
+                <span className="font-sans text-[#5c4a2c] text-md md:text-sm mt-1 tracking-wide font-light">
+                  Penthouses
+                </span>
+                <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-[#5c4a2c]/25" />
+              </div>
 
-            {/* Stat 3 */}
-            <div className="flex flex-col items-center text-center relative">
-              <span className="font-serif text-4xl md:text-5xl lg:text-[4.2rem] text-[#5c4a2c] font-light">
-                18
-              </span>
-              <span className="font-sans text-[#5c4a2c] text-md md:text-sm mt-1 tracking-wide font-light">
-                Unidades totales
-              </span>
-              <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-[#5c4a2c]/25" />
-            </div>
+              {/* Stat 3 */}
+              <div className="flex flex-col items-center text-center relative">
+                <span className="font-serif text-4xl md:text-5xl lg:text-[4.2rem] text-[#5c4a2c] font-light">
+                  18
+                </span>
+                <span className="font-sans text-[#5c4a2c] text-md md:text-sm mt-1 tracking-wide font-light">
+                  Unidades totales
+                </span>
+                <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-[#5c4a2c]/25" />
+              </div>
 
-            {/* Stat 4 */}
-            <div className="flex flex-col items-center text-center relative">
-              <span className="font-serif text-4xl md:text-5xl lg:text-[4.2rem] text-[#5c4a2c] font-light">
-                105 m²
-              </span>
-              <span className="font-sans text-[#5c4a2c] text-md md:text-sm mt-1 tracking-wide font-light">
-                Por departamento
-              </span>
-              <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-[#5c4a2c]/25" />
-            </div>
+              {/* Stat 4 */}
+              <div className="flex flex-col items-center text-center relative">
+                <span className="font-serif text-4xl md:text-5xl lg:text-[4.2rem] text-[#5c4a2c] font-light">
+                  2
+                </span>
+                <span className="font-sans text-[#5c4a2c] text-md md:text-sm mt-1 tracking-wide font-light">
+                  Planta Jardín
+                </span>
+                <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-[#5c4a2c]/25" />
+              </div>
 
-            {/* Stat 5 */}
-            <div className="col-span-2 md:col-span-1 flex flex-col items-center text-center">
-              <span className="font-serif text-4xl md:text-5xl lg:text-[4.2rem] text-[#5c4a2c] font-light">
-                2
-              </span>
-              <span className="font-sans text-[#5c4a2c] text-md md:text-sm mt-1 tracking-wide font-light">
-                Estacionamientos
-                <br />
-                por unidad
-              </span>
+              {/* Stat 5 */}
+              <div className="col-span-2 md:col-span-1 flex flex-col items-center text-center">
+                <span className="font-serif text-4xl md:text-5xl lg:text-[4.2rem] text-[#5c4a2c] font-light">
+                  2
+                </span>
+                <span className="font-sans text-[#5c4a2c] text-md md:text-sm mt-1 tracking-wide font-light">
+                  Estacionamientos
+                  <br />
+                  por unidad
+                </span>
+              </div>
             </div>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
       </div>
-    </div>
 
       {/* Detail Section with Full-Width Sand-Gold Background (#decd99) */}
       <div className="relative w-full bg-cream pt-8 pb-0 overflow-hidden">

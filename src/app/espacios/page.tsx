@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Espacios y distribuciones — Lomas Altas",
     description:
-      "Cuatro tipologías residenciales diseñadas a medida: Nivel Jardín, Tipología A, Tipología B y Penthouses. Recorre la distribución, acabados y renders.",
+      "Cuatro tipologías residenciales diseñadas a medida: Planta Jardín, Tipología A, Tipología B y Penthouses. Recorre la distribución, acabados y renders.",
     url: "/espacios",
     type: "website",
     images: [

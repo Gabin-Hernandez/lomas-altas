@@ -353,7 +353,7 @@ export default function SolicitudForm() {
         const found = MODELOS.find(
           (m) =>
             (m.valor && m.valor.toLowerCase().includes(modParam.toLowerCase())) ||
-            (modParam === "ta-nj-pb" && m.valor.includes("Nivel Jardín")) ||
+            (modParam === "ta-nj-pb" && (m.valor.includes("Planta Jardín") || m.valor.includes("Nivel Jardín"))) ||
             (modParam === "ta" && m.valor === "Tipología A (191.00 m²)") ||
             (modParam === "tb" && m.valor.includes("Tipología B")) ||
             (modParam === "ta-ph-pb" && m.valor.includes("Penthouse"))

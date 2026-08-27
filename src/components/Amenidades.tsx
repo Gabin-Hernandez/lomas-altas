@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { X } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface AmenityCard {
@@ -33,25 +34,8 @@ export default function Amenidades() {
       {
         title: "Gimnasio Equipado",
         img: "/images/Amenidades/Terralago Gym.jpg",
-        widthClass: "w-full md:w-[55%]",
-      },
-      {
-        title: "Roof Garden & Terraza",
-        img: "/images/6.png",
-        widthClass: "w-full md:w-[45%]",
-      },
-    ],
-    [
-      {
-        title: "Lobby & Recepción",
-        img: "/images/1.png",
-        widthClass: "w-full md:w-[40%]",
-      },
-      {
-        title: "Salón de Convivencia",
-        img: "/images/2.png",
-        widthClass: "w-full md:w-[60%]",
-      },
+        widthClass: "w-full",
+      }
     ],
     [
       {
@@ -88,9 +72,9 @@ export default function Amenidades() {
 
   return (
     <section id="amenidades" className="relative bg-[#ddcc98] pt-8 pb-20 md:pb-28 overflow-visible">
-      
+
       <div className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
-        
+
         {/* Section Header with Left/Right Lines */}
         <ScrollReveal variant="fade-up" delay={100}>
           <div className="flex items-center w-full max-w-5xl mx-auto gap-3 sm:gap-6 mb-12 sm:mb-16">
@@ -114,7 +98,7 @@ export default function Amenidades() {
                     className={`${card.widthClass} aspect-[16/10] md:h-[360px] lg:h-[440px] relative rounded-sm overflow-hidden shadow-xl border-0 group cursor-pointer`}
                   >
                     {/* Corner Ribbon / Triangle Header */}
-                    <div 
+                    <div
                       className="absolute top-0 left-0 bg-[#153124] w-[82%] sm:w-[380px] lg:w-[440px] max-w-[340px] sm:max-w-none h-[60px] sm:h-[72px] z-10 flex items-start pl-4 sm:pl-5 pt-3 sm:pt-3.5 transition-transform duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-0.5"
                       style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
                     >
@@ -154,8 +138,8 @@ export default function Amenidades() {
       </div>
 
       {/* Downward Sand-Gold Triangle Arrow dipping into the next section */}
-      <div 
-        className="absolute top-full left-1/2 -translate-x-1/2 w-20 sm:w-28 md:w-36 h-10 sm:h-14 md:h-16 bg-[#ddcc98] z-30 pointer-events-none" 
+      <div
+        className="absolute top-full left-1/2 -translate-x-1/2 w-20 sm:w-28 md:w-36 h-10 sm:h-14 md:h-16 bg-[#ddcc98] z-30 pointer-events-none"
         style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }}
       />
 
@@ -169,13 +153,13 @@ export default function Amenidades() {
             onClick={(e) => e.stopPropagation()}
             className="relative max-w-6xl w-full max-h-[90vh] flex flex-col items-center justify-center"
           >
-            {/* Close Button */}
             <button
               onClick={() => setActiveModalImage(null)}
-              className="absolute -top-12 right-0 text-white/80 hover:text-white text-3xl font-light focus:outline-none transition-colors"
+              className="absolute -top-12 right-0 text-white/80 hover:text-white p-1 focus:outline-none transition-colors"
               title="Cerrar (ESC)"
+              aria-label="Cerrar modal"
             >
-              ✕
+              <X className="h-7 w-7" />
             </button>
 
             {/* Title Header */}

@@ -11,6 +11,8 @@ import {
   Car,
   Bed,
   Bath,
+  Utensils,
+  Sofa,
   Layers,
   Sparkles,
   MessageCircle,
@@ -311,52 +313,71 @@ export default function TipologiaDetalle({ tipologia }: TipologiaDetalleProps) {
         <SafeReveal variant="fade-up" className="mb-20">
           <div className="mb-8">
             <h2 className="font-sans text-[11px] font-semibold uppercase tracking-[0.25em] text-[#5c4a2c]">
-              03 · Renders y perspectivas interiores
+              03 · Renders de referencia y perspectivas
             </h2>
             <h3 className="mt-2 font-serif text-2xl font-light text-forest sm:text-3xl">
               Visualización hiperrealista de los espacios
             </h3>
+            <p className="mt-2 font-sans text-xs font-light text-[#5c4a2c]/80">
+              Renders de referencia arquitectónica del prototipo: estancia social, recámara, cocina y baño.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {tipologia.renders.map((render, rIdx) => {
               const itemIndex = tipologia.plantas.length + rIdx;
+              const espLower = render.espacio.toLowerCase();
+              const isBed = espLower.includes("recámara") || espLower.includes("suite") || espLower.includes("habitación");
+              const isKitchen = espLower.includes("cocina");
+              const isBath = espLower.includes("baño");
+
               return (
                 <div
                   key={render.id}
                   onClick={() => setLightboxIndex(itemIndex)}
-                  className="group relative cursor-pointer border border-[#5c4a2c]/20 bg-cream-dark overflow-hidden transition-all duration-300 hover:border-gold hover:shadow-xl"
+                  className="group relative flex flex-col cursor-pointer border border-[#5c4a2c]/20 bg-cream-dark overflow-hidden transition-all duration-300 hover:border-gold hover:shadow-xl"
                 >
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#153124]">
                     <Image
                       src={render.src}
                       alt={render.alt}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-forest-deeper/80 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-40" />
 
                     <div className="absolute top-3 left-3">
-                      <span className="bg-forest/80 px-2.5 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-gold-light backdrop-blur-sm">
-                        {render.espacio}
+                      <span className="inline-flex items-center gap-1.5 bg-[#153124]/90 px-2.5 py-1 font-sans text-[10px] font-medium uppercase tracking-widest text-gold-light backdrop-blur-sm border border-white/10 shadow-xs">
+                        {isBed ? (
+                          <Bed className="h-3 w-3 text-gold-light shrink-0" />
+                        ) : isKitchen ? (
+                          <Utensils className="h-3 w-3 text-gold-light shrink-0" />
+                        ) : isBath ? (
+                          <Bath className="h-3 w-3 text-gold-light shrink-0" />
+                        ) : (
+                          <Sofa className="h-3 w-3 text-gold-light shrink-0" />
+                        )}
+                        <span>{render.espacio}</span>
                       </span>
                     </div>
 
                     <div className="absolute right-3 bottom-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <span className="flex items-center gap-1.5 bg-gold px-2.5 py-1 font-sans text-[10px] font-semibold uppercase tracking-wider text-forest-dark">
+                      <span className="flex items-center gap-1.5 bg-gold px-2.5 py-1 font-sans text-[10px] font-semibold uppercase tracking-wider text-forest-dark shadow-sm">
                         <Maximize2 className="h-3 w-3" /> Ver render
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-5">
-                    <h4 className="font-serif text-lg font-light text-forest group-hover:text-[#7d6731] transition-colors">
-                      {render.titulo}
-                    </h4>
-                    <p className="mt-2 font-sans text-xs font-light leading-relaxed text-[#5c4a2c]">
-                      {render.caption}
-                    </p>
+                  <div className="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h4 className="font-serif text-base font-light text-forest group-hover:text-[#7d6731] transition-colors leading-snug">
+                        {render.titulo}
+                      </h4>
+                      <p className="mt-2 font-sans text-xs font-light leading-relaxed text-[#5c4a2c]">
+                        {render.caption}
+                      </p>
+                    </div>
                   </div>
                 </div>
               );

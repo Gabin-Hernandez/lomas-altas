@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, X } from "lucide-react";
 
 interface FeatureItem {
   name: string;
@@ -30,9 +30,9 @@ interface ModelInfo {
 }
 
 const modelData: Record<string, ModelInfo> = {
-  "Tipología A (NJ)": {
+  "Planta Jardín": {
     slug: "ta-nj-pb",
-    codigo: "TA-NJ-PB",
+    codigo: "PJ-PB",
     superficie: "351.36 m²",
     desc: "Exclusiva residencia dúplex en Planta Baja con 263.8 m² de área interior, terraza techada y jardín privado sin techar de 46.39 m².",
     areas: {
@@ -366,11 +366,11 @@ export default function Espacios() {
                       <button
                         type="button"
                         onClick={() => setActiveFeatureName("")}
-                        className="shrink-0 w-7 h-7 -mr-1 -mt-1 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 text-white text-xs font-bold transition-colors focus:outline-none focus:ring-1 focus:ring-[#d4c491]"
+                        className="shrink-0 w-7 h-7 -mr-1 -mt-1 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 text-white transition-colors focus:outline-none focus:ring-1 focus:ring-[#d4c491]"
                         title="Cerrar"
                         aria-label="Cerrar detalles"
                       >
-                        ✕
+                        <X className="h-3.5 w-3.5" />
                       </button>
                     </div>
 

@@ -107,7 +107,7 @@ export default function Tipologias() {
               titulo="Cuatro prototipos residenciales"
               acento="espacios diseñados a medida"
               tone="cream"
-              bajada="18 residencias exclusivas distribuidas con rigor arquitectónico: 2 residencias Nivel Jardín con áreas exteriores de 87 m², 14 departamentos de tres recámaras en los niveles 1 al 4, y 2 penthouses majestuosos con roof garden y terrazas privadas."
+              bajada="18 residencias exclusivas distribuidas con rigor arquitectónico: 2 residencias Planta Jardín con áreas exteriores de 87 m², 14 departamentos de tres recámaras en los niveles 1 al 4, y 2 penthouses majestuosos con roof garden y terrazas privadas."
             />
           </SafeReveal>
 

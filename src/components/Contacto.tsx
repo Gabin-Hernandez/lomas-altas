@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Image from "next/image";
+import { Check } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Contacto() {
@@ -48,7 +49,7 @@ export default function Contacto() {
                   "Plusvalía en Lomas Verdes",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-4 text-white/95 text-base md:text-lg">
-                    <span className="text-gold-light text-base md:text-lg font-bold shrink-0">✓</span>
+                    <Check className="h-5 w-5 text-gold-light shrink-0" />
                     <span className="font-sans font-light tracking-wide">{item}</span>
                   </li>
                 ))}

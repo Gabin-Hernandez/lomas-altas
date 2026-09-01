@@ -79,13 +79,13 @@ export default function PliegoInterior() {
               className={`absolute inset-0 ${ANILLO_PLACA}`}
             >
               <Image
-                src="/images/3.png"
+                src="/images/estancia-comedor.jpg"
                 alt={figuras[0].alt}
                 fill
                 quality={100}
                 unoptimized
                 sizes="100vw"
-                loading="lazy"
+                priority
                 className="object-cover object-center"
               />
             </button>

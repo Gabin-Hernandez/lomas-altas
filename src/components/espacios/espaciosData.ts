@@ -604,11 +604,11 @@ export const NIVELES: readonly Nivel[] = [
 
 export const FIGURAS: readonly LightboxItem[] = [
   {
-    src: "/images/3.png",
-    alt: "Estancia y comedor abiertos hacia la terraza con cancelería de piso a techo",
+    src: "/images/estancia-comedor.jpg",
+    alt: "Estancia y salón con iluminación natural y amplios ventanales",
     title: "Fig. 03 — Estancia y comedor",
     caption:
-      "Estancia y comedor abiertos a la terraza, sin muros intermedios. El cancel filtra la vista y baña de luz la estancia.",
+      "Estancia y comedor con techos continuos, ventanales de piso a techo y conexión panorámica al exterior.",
   },
   {
     src: "/images/10.png",

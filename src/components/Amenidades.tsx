@@ -40,7 +40,7 @@ export default function Amenidades() {
     [
       {
         title: "Lobby Jardín",
-        img: "/images/Amenidades/Terralago Lobby jardín.jpg",
+        img: "/images/Amenidades/TT_Lobby_06@2x.jpg",
         widthClass: "w-full md:w-[48%]",
       },
       {

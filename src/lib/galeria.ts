@@ -246,12 +246,12 @@ export const LAMINAS: Lamina[] = [
     height: 1866,
     titulo: "Corte por niveles",
     epigrafe:
-      "Cuatro niveles de departamentos, dos penthouses con roof garden en la coronación, planta baja y tres sótanos de estacionamiento sobre el jardín.",
-    alt: "Corte esquemático del edificio por niveles, del N−4 al N6: jardín, tres sótanos de estacionamiento, planta baja, cuatro niveles con los modelos A, B y C, y dos penthouses con roof garden.",
+      "Niveles de departamentos, dos penthouses dúplex con roof garden, residencias Planta Jardín en 2 niveles (N0–N1) y tres sótanos de estacionamiento.",
+    alt: "Corte esquemático del edificio por niveles: áreas verdes, tres sótanos de estacionamiento, residencias Planta Jardín en 2 niveles (N0–N1), departamentos y penthouses dúplex.",
     crop: {
       ratio: "aspect-[6/5]",
       imgClass: "object-cover object-right",
-      nota: "The file carries its own baked-in legend in the left third (x 6.7–23.8%); the diagram starts at x 35.2%. 6/5 + object-right shows the right 67.5%, dropping the baked legend — it is reprinted as real HTML next to it. Background measured #fcfcfc.",
+      nota: "Background measured #fcfcfc.",
     },
     miniatura: { fondo: "bg-white", imgClass: "object-cover object-right" },
     visor: { plate: "cream" },

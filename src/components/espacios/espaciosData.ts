@@ -585,21 +585,24 @@ export const ACABADOS: readonly Acabado[] = [
 export interface Nivel {
   codigo: string;
   uso: string;
+  nombre?: string;
+  topPercent: number;
+  bottomPercent: number;
+  centerPercent: number;
   y: number;
 }
 
 export const NIVELES: readonly Nivel[] = [
-  { codigo: "N6", uso: "Tipología A — Penthouse (2 unidades)", y: 11.7 },
-  { codigo: "N5", uso: "Tipología A — Penthouse y terrazas privadas", y: 19.8 },
-  { codigo: "N4", uso: "Tipología A (2) y Tipología B (2)", y: 28.2 },
-  { codigo: "N3", uso: "Tipología A (2) y Tipología B (2)", y: 36.4 },
-  { codigo: "N2", uso: "Tipología A (2) y Tipología B (1)", y: 44.6 },
-  { codigo: "N1", uso: "Tipología A (2) y Tipología B (1)", y: 52.7 },
-  { codigo: "N0 / PB", uso: "Planta Jardín (2) y Amenidades", y: 61.7 },
-  { codigo: "N-1", uso: "Estacionamiento 1", y: 69.3 },
-  { codigo: "N-2", uso: "Estacionamiento 2", y: 75.3 },
-  { codigo: "N-3", uso: "Estacionamiento 3", y: 81.2 },
-  { codigo: "N-4", uso: "Jardines y áreas verdes", y: 87.4 },
+  { codigo: "N6", uso: "Tipología A — Penthouse (2 unidades)", nombre: "Penthouse — Planta Alta", topPercent: 0, bottomPercent: 15.7, centerPercent: 11.7, y: 11.7 },
+  { codigo: "N5", uso: "Tipología A — Penthouse y terrazas privadas", nombre: "Penthouse — Planta Baja", topPercent: 15.7, bottomPercent: 24.0, centerPercent: 19.8, y: 19.8 },
+  { codigo: "N4", uso: "Tipología A (2) y Tipología B (2)", nombre: "Nivel Residencial 4", topPercent: 24.0, bottomPercent: 32.3, centerPercent: 28.2, y: 28.2 },
+  { codigo: "N3", uso: "Tipología A (2) y Tipología B (2)", nombre: "Nivel Residencial 3", topPercent: 32.3, bottomPercent: 40.5, centerPercent: 36.4, y: 36.4 },
+  { codigo: "N2", uso: "Tipología A (2) y Tipología B (1)", nombre: "Nivel Residencial 2", topPercent: 40.5, bottomPercent: 50.2, centerPercent: 45.3, y: 45.3 },
+  { codigo: "N0–N1", uso: "Planta Jardín (Dúplex 2 Niveles)", nombre: "Planta Jardín (Dúplex 2 Niveles)", topPercent: 50.2, bottomPercent: 67.5, centerPercent: 58.8, y: 58.8 },
+  { codigo: "N-1", uso: "Estacionamiento 1", nombre: "Sótano 1 — Estacionamiento", topPercent: 67.5, bottomPercent: 74.3, centerPercent: 70.9, y: 70.9 },
+  { codigo: "N-2", uso: "Estacionamiento 2", nombre: "Sótano 2 — Estacionamiento", topPercent: 74.3, bottomPercent: 81.0, centerPercent: 77.6, y: 77.6 },
+  { codigo: "N-3", uso: "Estacionamiento 3", nombre: "Sótano 3 — Estacionamiento", topPercent: 81.0, bottomPercent: 87.5, centerPercent: 84.2, y: 84.2 },
+  { codigo: "N-4", uso: "Jardines y áreas verdes", nombre: "Nivel Amenidades — Jardines", topPercent: 87.5, bottomPercent: 100, centerPercent: 93.5, y: 93.5 },
 ];
 
 export const FIGURAS: readonly LightboxItem[] = [
@@ -652,10 +655,10 @@ export const FIGURA_PLANTA: readonly LightboxItem[] = [
 export const FIGURA_CORTE: readonly LightboxItem[] = [
   {
     src: "/images/estructura.jpg",
-    alt: "Corte esquemático del edificio Lomas Altas con 18 unidades distribuidas en 5 niveles y 3 sótanos de estacionamiento",
+    alt: "Corte esquemático del edificio Lomas Altas con 18 unidades distribuidas en niveles residenciales, Planta Jardín en 2 niveles (N0–N1), sótanos de estacionamiento y amenidades",
     title: "Fig. 08 — El edificio en corte",
     caption:
-      "Corte esquemático por niveles, de N-4 a N6. En total 18 residencias exclusivas.",
+      "Distribución por niveles, de N-4 a N6. Residencias Planta Jardín en 2 niveles (N0–N1), departamentos y penthouses dúplex.",
     plate: "cream",
   },
 ];

@@ -10,9 +10,6 @@ import { FIGURA_CORTE, NIVELES, TIPOLOGIAS } from "./espaciosData";
 const ANILLO =
   "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7d6731] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fcfcfc]";
 
-// Diagonal perspective slope across the axonometric drawing
-const SLANT_HALF = 2.25;
-
 export default function CorteNiveles() {
   const [nivelActivo, setNivelActivo] = useState<string>("N0–N1");
   const [lightbox, setLightbox] = useState<number | null>(null);
@@ -22,20 +19,15 @@ export default function CorteNiveles() {
     setNivelActivo((prev) => (prev === codigo ? prev : codigo));
   }, []);
 
-  // Diagonal Mathematical Coordinate Tracker: matches the 3D axonometric slab slope
+  // Mathematical Single-Point Coordinate Tracker: 100% immune to subpixel/zoom jitter
   const handleDiagramPointerMove = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
     if (!diagramRef.current) return;
     const rect = diagramRef.current.getBoundingClientRect();
-    if (rect.height <= 0 || rect.width <= 0) return;
+    if (rect.height <= 0) return;
 
     const relY = ((e.clientY - rect.top) / rect.height) * 100;
-    const relX = (e.clientX - rect.left) / rect.width;
-    
-    // Compensate for the axonometric slant so hit-testing follows the slanted floors
-    const normalizedY = relY - (relX - 0.5) * (SLANT_HALF * 2);
-
     const matched = NIVELES.find(
-      (n) => normalizedY >= n.topPercent && normalizedY < n.bottomPercent
+      (n) => relY >= n.topPercent && relY < n.bottomPercent
     );
 
     if (matched) {
@@ -43,17 +35,7 @@ export default function CorteNiveles() {
     }
   }, []);
 
-  const nivelSeleccionado = NIVELES.find((n) => n.codigo === nivelActivo) || NIVELES[5];
-
-  // SVG viewBox is 1000 x 811.3 (aspect 1150 / 933)
-  const toSvgY = (pct: number) => (pct * 8.113).toFixed(2);
-
-  const yTopLeft = toSvgY(nivelSeleccionado.topPercent - SLANT_HALF);
-  const yTopRight = toSvgY(nivelSeleccionado.topPercent + SLANT_HALF);
-  const yBotLeft = toSvgY(nivelSeleccionado.bottomPercent - SLANT_HALF);
-  const yBotRight = toSvgY(nivelSeleccionado.bottomPercent + SLANT_HALF);
-  const yCenterLeft = toSvgY(nivelSeleccionado.centerPercent - SLANT_HALF);
-  const yCenterRight = toSvgY(nivelSeleccionado.centerPercent + SLANT_HALF);
+  const nivelSeleccionado = NIVELES.find((n) => n.codigo === nivelActivo) || NIVELES[6];
 
   return (
     <section
@@ -68,7 +50,7 @@ export default function CorteNiveles() {
               titulo="El edificio"
               acento="en corte"
               tone="blanco"
-              bajada="Corte axonométrico del edificio: penthouses y roof garden en la coronación, departamentos tipo en niveles 2 a 4, residencias Planta Jardín en 2 niveles (N0–N1) con 46 m² de jardín privado, tres niveles de estacionamiento techado y áreas verdes."
+              bajada="Distribución vertical de la torre: penthouses dúplex en la cumbre, niveles de departamentos tipo, residencias Planta Jardín en 2 niveles con jardín privado de 46 m², tres sótanos de estacionamiento y amenidades en el nivel más bajo."
             />
           </SafeReveal>
 
@@ -86,10 +68,10 @@ export default function CorteNiveles() {
               <span aria-hidden className="mt-1 h-14 w-px shrink-0 bg-[#5c4a2c]/20" />
               <div>
                 <span className="block font-serif text-[2.75rem] font-light leading-[0.9] text-[#153223] md:text-[3.25rem]">
-                  10
+                  12
                 </span>
                 <span className="mt-2 block font-sans text-[10px] uppercase tracking-[0.22em] text-[#5c4a2c]/80">
-                  Secciones
+                  Niveles Totales
                 </span>
               </div>
             </div>
@@ -119,8 +101,8 @@ export default function CorteNiveles() {
             {/* Stable Level Selector Buttons (Zero layout shift, zero jitter) */}
             <div className="mt-8 bg-white rounded-2xl p-3 border border-[#153223]/10 shadow-sm">
               <div className="text-[10px] uppercase tracking-widest font-semibold text-[#5c4a2c]/70 px-2 mb-2 flex items-center justify-between">
-                <span>Seleccionar nivel</span>
-                <span className="text-[#c4a96a]">10 Secciones</span>
+                <span>Niveles de la torre</span>
+                <span className="text-[#c4a96a]">11 Secciones</span>
               </div>
 
               <ol className="space-y-1">
@@ -140,7 +122,7 @@ export default function CorteNiveles() {
                         } ${ANILLO}`}
                       >
                         <span
-                          className={`w-14 shrink-0 font-serif text-[12px] font-semibold transition-colors ${
+                          className={`w-12 shrink-0 font-serif text-[12px] font-semibold transition-colors ${
                             isSelected ? "text-[#decd98]" : "text-[#7d6731]"
                           }`}
                         >
@@ -168,7 +150,7 @@ export default function CorteNiveles() {
             </div>
           </div>
 
-          {/* Right Column: 3D Axonometric Building Render with Diagonal Perspective Highlight */}
+          {/* Right Column: Building Diagram with Smooth Continuous Mathematical Overlay */}
           <SafeReveal
             variant="fade-up"
             delay={120}
@@ -181,78 +163,92 @@ export default function CorteNiveles() {
                 ref={diagramRef}
                 onPointerMove={handleDiagramPointerMove}
                 onClick={handleDiagramPointerMove}
-                className="relative aspect-[1150/933] min-w-[720px] lg:min-w-0 rounded-2xl overflow-hidden shadow-2xl border border-[#153223]/10 bg-[#fbfaf8] cursor-pointer touch-none"
+                className="relative aspect-[1107/961] w-full rounded-2xl overflow-hidden shadow-2xl border border-[#153223]/10 bg-[#fbfaf8] cursor-pointer touch-none"
               >
-                {/* Original pristine base image estructura.jpg without any overlaid cards */}
+                {/* Base Building Image (Updated with Planta Jardín 2 levels) */}
                 <Image
-                  src="/images/estructura.jpg"
-                  alt="Corte esquemático del edificio Lomas Altas: penthouses y roof garden en N5 y N6, departamentos en N2 a N4, Planta Jardín en 2 niveles (N0–N1), tres niveles de estacionamiento de N-1 a N-3 y áreas verdes en N-4."
+                  src="/images/distribucion-plantas.jpg"
+                  alt="Corte esquemático del edificio Lomas Altas: penthouses dúplex en N6-N7, departamentos en N2-N5, Planta Jardín en 2 niveles en N0-N1, estacionamientos en N-1 a N-3 y amenidades en N-4."
                   fill
-                  sizes="(min-width:1024px) 100vw, 100vw"
+                  sizes="(min-width:1024px) 70vw, 100vw"
                   quality={100}
                   unoptimized
                   priority
-                  className="object-cover object-right select-none pointer-events-none"
+                  className="object-contain object-right md:object-center select-none pointer-events-none"
                 />
 
-                {/* DIAGONAL PERSPECTIVE HIGHLIGHT OVERLAY (Follows the true 3D axonometric slab angle) */}
-                <svg
-                  viewBox="0 0 1000 811"
-                  preserveAspectRatio="none"
-                  className="absolute inset-0 w-full h-full pointer-events-none z-10"
+                {/* ACTIVE FLOOR HIGHLIGHT (Smooth Single Element, 100% pointer-events-none) */}
+                <div
+                  style={{
+                    top: `${nivelSeleccionado.topPercent}%`,
+                    height: `${nivelSeleccionado.bottomPercent - nivelSeleccionado.topPercent}%`,
+                  }}
+                  className="absolute left-0 right-0 bg-gradient-to-r from-[#c4a96a]/28 via-[#153223]/18 to-[#c4a96a]/22 border-y border-[#c4a96a]/60 pointer-events-none z-10 transition-all duration-150"
                 >
-                  <defs>
-                    <linearGradient id="goldDiagonalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#c4a96a" stopOpacity="0.28" />
-                      <stop offset="50%" stopColor="#153223" stopOpacity="0.14" />
-                      <stop offset="100%" stopColor="#c4a96a" stopOpacity="0.22" />
-                    </linearGradient>
-                  </defs>
+                  <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-white/40 to-transparent animate-[pulse_1.5s_ease-in-out_infinite]" />
+                  </div>
+                </div>
 
-                  {/* Diagonal Floor Polygon */}
-                  <polygon
-                    points={`0,${yTopLeft} 1000,${yTopRight} 1000,${yBotRight} 0,${yBotLeft}`}
-                    fill="url(#goldDiagonalGradient)"
-                    className="transition-all duration-150"
-                  />
+                {/* PINS & LABELS LAYER (100% pointer-events-none) */}
+                <div className="absolute inset-0 pointer-events-none z-20">
+                  {NIVELES.map((n) => {
+                    const isSelected = nivelActivo === n.codigo;
 
-                  {/* Top Diagonal Slab Line (Accurately follows the underside of upper slab) */}
-                  <line
-                    x1="0"
-                    y1={yTopLeft}
-                    x2="1000"
-                    y2={yTopRight}
-                    stroke="#c4a96a"
-                    strokeWidth="1.5"
-                    strokeOpacity="0.8"
-                    className="transition-all duration-150"
-                  />
+                    return (
+                      <div
+                        key={n.codigo}
+                        style={{ top: `${n.centerPercent}%` }}
+                        className="absolute left-1 sm:left-3 md:left-4 -translate-y-1/2 flex items-center gap-1.5 sm:gap-2 select-none pointer-events-none"
+                      >
+                        {/* Pin Tag */}
+                        <div
+                          className={`px-2 py-0.5 rounded-md font-serif text-[10px] sm:text-xs font-bold shadow-sm transition-colors duration-100 ${
+                            isSelected
+                              ? "bg-[#153223] text-[#decd98]"
+                              : "bg-white/90 text-[#153223] border border-[#153223]/15"
+                          }`}
+                        >
+                          {n.codigo}
+                        </div>
 
-                  {/* Bottom Diagonal Slab Line */}
-                  <line
-                    x1="0"
-                    y1={yBotLeft}
-                    x2="1000"
-                    y2={yBotRight}
-                    stroke="#c4a96a"
-                    strokeWidth="1.5"
-                    strokeOpacity="0.8"
-                    className="transition-all duration-150"
-                  />
+                        {/* Dotted Connecting Line */}
+                        <div
+                          className={`h-px w-3 sm:w-6 md:w-10 border-b border-dashed transition-colors duration-100 ${
+                            isSelected
+                              ? "border-[#c4a96a] border-solid"
+                              : "border-[#153223]/30"
+                          }`}
+                        />
 
-                  {/* Subtle Centerline Guide */}
-                  <line
-                    x1="0"
-                    y1={yCenterLeft}
-                    x2="1000"
-                    y2={yCenterRight}
-                    stroke="#a8904f"
-                    strokeWidth="1"
-                    strokeOpacity="0.45"
-                    strokeDasharray="4,4"
-                    className="transition-all duration-150"
-                  />
-                </svg>
+                        {/* Glowing Dot Marker */}
+                        <div className="relative flex items-center justify-center">
+                          {isSelected && (
+                            <span className="absolute w-6 h-6 rounded-full bg-[#c4a96a]/40 animate-ping" />
+                          )}
+                          <span
+                            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-100 ${
+                              isSelected
+                                ? "bg-[#c4a96a] ring-4 ring-[#c4a96a]/50 shadow-[0_0_12px_#c4a96a]"
+                                : "bg-[#153223]/60"
+                            }`}
+                          />
+                        </div>
+
+                        {/* Level Micro-label */}
+                        <span
+                          className={`hidden md:inline-block text-[11px] font-medium tracking-wide transition-opacity duration-100 ml-1.5 px-2 py-0.5 rounded-md ${
+                            isSelected
+                              ? "bg-[#153223]/90 text-cream backdrop-blur-sm shadow-md opacity-100"
+                              : "opacity-0 bg-white/90 text-[#153223]"
+                          }`}
+                        >
+                          {n.nombre ?? n.uso}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
 
               </div>
 
@@ -279,7 +275,7 @@ export default function CorteNiveles() {
 
               <p className="mt-5 border-t border-[#5c4a2c]/20 pt-2.5 text-[10px] leading-[1.6] tracking-[0.02em] text-[#5c4a2c]/80 md:text-[11px]">
                 <span className="font-serif text-[11px] text-[#7d6731]">Fig. 08</span> — Corte
-                esquemático por niveles, de N-4 a N6. Residencias Planta Jardín en 2 niveles (N0–N1) con 46 m² de jardín privado, departamentos tipo en N2–N4 y penthouses con roof garden en N5–N6.
+                esquemático por niveles, de N-4 a N7. Residencias Planta Jardín en 2 niveles (N0–N1) con 46 m² de jardín privado, departamentos tipo en N2–N5 y penthouses dúplex en N6–N7.
               </p>
             </div>
           </SafeReveal>

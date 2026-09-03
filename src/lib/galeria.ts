@@ -241,19 +241,19 @@ export const LAMINAS: Lamina[] = [
   {
     id: "12",
     cuaderno: "04",
-    src: "/images/estructura.jpg",
-    width: 3316,
-    height: 1866,
+    src: "/images/distribucion-plantas.jpg",
+    width: 1107,
+    height: 961,
     titulo: "Corte por niveles",
     epigrafe:
-      "Niveles de departamentos, dos penthouses dúplex con roof garden, residencias Planta Jardín en 2 niveles (N0–N1) y tres sótanos de estacionamiento.",
-    alt: "Corte esquemático del edificio por niveles: áreas verdes, tres sótanos de estacionamiento, residencias Planta Jardín en 2 niveles (N0–N1), departamentos y penthouses dúplex.",
+      "Niveles de departamentos, dos penthouses dúplex, residencias Planta Jardín en 2 niveles (N0–N1), tres sótanos de estacionamiento y amenidades.",
+    alt: "Corte esquemático del edificio por niveles: amenidades, tres sótanos de estacionamiento, residencias Planta Jardín en 2 niveles (N0–N1), departamentos y penthouses dúplex.",
     crop: {
-      ratio: "aspect-[6/5]",
-      imgClass: "object-cover object-right",
+      ratio: "aspect-[1107/961]",
+      imgClass: "object-contain",
       nota: "Background measured #fcfcfc.",
     },
-    miniatura: { fondo: "bg-white", imgClass: "object-cover object-right" },
+    miniatura: { fondo: "bg-white", imgClass: "object-contain" },
     visor: { plate: "cream" },
   },
 ];

@@ -593,16 +593,17 @@ export interface Nivel {
 }
 
 export const NIVELES: readonly Nivel[] = [
-  { codigo: "N6", uso: "Tipología A — Penthouse (2 unidades)", nombre: "Penthouse — Planta Alta", topPercent: 0, bottomPercent: 15.7, centerPercent: 11.7, y: 11.7 },
-  { codigo: "N5", uso: "Tipología A — Penthouse y terrazas privadas", nombre: "Penthouse — Planta Baja", topPercent: 15.7, bottomPercent: 24.0, centerPercent: 19.8, y: 19.8 },
-  { codigo: "N4", uso: "Tipología A (2) y Tipología B (2)", nombre: "Nivel Residencial 4", topPercent: 24.0, bottomPercent: 32.3, centerPercent: 28.2, y: 28.2 },
-  { codigo: "N3", uso: "Tipología A (2) y Tipología B (2)", nombre: "Nivel Residencial 3", topPercent: 32.3, bottomPercent: 40.5, centerPercent: 36.4, y: 36.4 },
-  { codigo: "N2", uso: "Tipología A (2) y Tipología B (1)", nombre: "Nivel Residencial 2", topPercent: 40.5, bottomPercent: 50.2, centerPercent: 45.3, y: 45.3 },
-  { codigo: "N0–N1", uso: "Planta Jardín (Dúplex 2 Niveles)", nombre: "Planta Jardín (Dúplex 2 Niveles)", topPercent: 50.2, bottomPercent: 67.5, centerPercent: 58.8, y: 58.8 },
-  { codigo: "N-1", uso: "Estacionamiento 1", nombre: "Sótano 1 — Estacionamiento", topPercent: 67.5, bottomPercent: 74.3, centerPercent: 70.9, y: 70.9 },
-  { codigo: "N-2", uso: "Estacionamiento 2", nombre: "Sótano 2 — Estacionamiento", topPercent: 74.3, bottomPercent: 81.0, centerPercent: 77.6, y: 77.6 },
-  { codigo: "N-3", uso: "Estacionamiento 3", nombre: "Sótano 3 — Estacionamiento", topPercent: 81.0, bottomPercent: 87.5, centerPercent: 84.2, y: 84.2 },
-  { codigo: "N-4", uso: "Jardines y áreas verdes", nombre: "Nivel Amenidades — Jardines", topPercent: 87.5, bottomPercent: 100, centerPercent: 93.5, y: 93.5 },
+  { codigo: "N7", uso: "Penthouse — Planta Alta (2 PH + 1 TD)", nombre: "Penthouse — Planta Alta", topPercent: 0, bottomPercent: 10.6, centerPercent: 6.7, y: 6.7 },
+  { codigo: "N6", uso: "Penthouse — Planta Baja (2 PH + 1 TD)", nombre: "Penthouse — Planta Baja", topPercent: 10.6, bottomPercent: 18.4, centerPercent: 14.5, y: 14.5 },
+  { codigo: "N5", uso: "Nivel Residencial 5 (TA y TD)", nombre: "Nivel Residencial 5", topPercent: 18.4, bottomPercent: 26.2, centerPercent: 22.3, y: 22.3 },
+  { codigo: "N4", uso: "Nivel Residencial 4 (TA y TD)", nombre: "Nivel Residencial 4", topPercent: 26.2, bottomPercent: 34.0, centerPercent: 30.1, y: 30.1 },
+  { codigo: "N3", uso: "Nivel Residencial 3 (TA y TD)", nombre: "Nivel Residencial 3", topPercent: 34.0, bottomPercent: 41.8, centerPercent: 37.9, y: 37.9 },
+  { codigo: "N2", uso: "Nivel Residencial 2 (TA y TD)", nombre: "Nivel Residencial 2", topPercent: 41.8, bottomPercent: 49.6, centerPercent: 45.7, y: 45.7 },
+  { codigo: "N0–N1", uso: "Planta Jardín (Dúplex 2 Niveles)", nombre: "Planta Jardín (Dúplex 2 Niveles)", topPercent: 49.6, bottomPercent: 65.0, centerPercent: 57.3, y: 57.3 },
+  { codigo: "N-1", uso: "Sótano 1 — Estacionamiento 1", nombre: "Sótano 1 — Estacionamiento", topPercent: 65.0, bottomPercent: 72.3, centerPercent: 68.6, y: 68.6 },
+  { codigo: "N-2", uso: "Sótano 2 — Estacionamiento 2", nombre: "Sótano 2 — Estacionamiento", topPercent: 72.3, bottomPercent: 79.6, centerPercent: 75.9, y: 75.9 },
+  { codigo: "N-3", uso: "Sótano 3 — Estacionamiento 3", nombre: "Sótano 3 — Estacionamiento", topPercent: 79.6, bottomPercent: 86.9, centerPercent: 83.2, y: 83.2 },
+  { codigo: "N-4", uso: "Nivel Amenidades — Salón de Eventos & GYM", nombre: "Nivel Amenidades", topPercent: 86.9, bottomPercent: 100, centerPercent: 93.4, y: 93.4 },
 ];
 
 export const FIGURAS: readonly LightboxItem[] = [
@@ -654,11 +655,11 @@ export const FIGURA_PLANTA: readonly LightboxItem[] = [
 
 export const FIGURA_CORTE: readonly LightboxItem[] = [
   {
-    src: "/images/estructura.jpg",
-    alt: "Corte esquemático del edificio Lomas Altas con 18 unidades distribuidas en niveles residenciales, Planta Jardín en 2 niveles (N0–N1), sótanos de estacionamiento y amenidades",
+    src: "/images/distribucion-plantas.jpg",
+    alt: "Distribución esquemática por plantas del edificio Lomas Altas: Penthouses dúplex (N6-N7), departamentos (N2-N5), residencias Planta Jardín en 2 niveles (N0-N1), tres niveles de estacionamiento y amenidades en N-4.",
     title: "Fig. 08 — El edificio en corte",
     caption:
-      "Distribución por niveles, de N-4 a N6. Residencias Planta Jardín en 2 niveles (N0–N1), departamentos y penthouses dúplex.",
+      "Distribución vertical por niveles, de N-4 a N7. Residencias Planta Jardín en 2 niveles, departamentos y penthouses dúplex.",
     plate: "cream",
   },
 ];
